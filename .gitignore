@@ -1,0 +1,61 @@
+## macOS Specific ignores
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+## Ignore list for Eagle CAD Projects
+# Backup files
+*.s#?
+*.b#?
+*.l#?
+*.b$?
+*.s$?
+*.l$?
+# Autorouter files
+*.pro
+*.job
+# CAM files
+*.$$$
+*.cmp
+*.ly2
+*.l15
+*.sol
+*.plc
+*.stc
+*.sts
+*.crc
+*.crs
+*.dri
+*.drl
+*.gpi
+*.pls
+*.ger
+*.xln
+*.drd
+*.drd.*
+*.s#*
+*.b#*
+*.info
+*.eps
+# file locks introduced since 7.x
+*.lck
