@@ -374,3 +374,47 @@ Do take note of a few things during validation: cathode/anode markings and pinou
 | :---------------- | :------ |
 | Pinout Validation | PASS    |
 | Logic Validation  | PASS    |
+
+## Testing programs
+
+The SSTuino II shall be put through a series of acceptance testing to ensure it fully meets the needs of our customers. We adapted our testing program from a select subset of industry-standard testing programs.
+
+The tests are: Engineering Validation Test (EVT), Product Validation Test (PVT), and finally Mass Production QC (MPQC). 
+
+For an overview of standard development processes, please check out [this article](https://formlabs.com/asia/blog/validation-testing-product-development-poc-evt-dvt-pvt-mp/)
+
+### Engineering Validation Testing (EVT)
+
+The primary goal of EVT is to determine the feasibility of the entire project in technical terms. Essentially, it boils to "whether the product works as a fully built prototype".
+
+This section will go through all the exact tests that the EVT stage will conduct to ensure the success of the product. This will also involve replicating common projects from previous existing SSTuino 1 projects so that we can be assured that all previous projects will work perfectly.
+
+#### EVT1: Digital I/O
+
+All digital I/O must be able to write and read a digital signal with no error. They must be able to generate a stable clock signal and inspected by an oscilloscope to verify their signal characteristics (bit-bang). For pins with PWM capability, they must be able to emit the desired PWM percentage at the pre-defined frequency, validated by means of an oscilloscope.
+
+#### EVT2: Analogue inputs
+
+All pins capable of analogue inputs must be tested with a simple potentiometer and serial readout of the analogue voltage.
+
+#### EVT3: Serial ports
+
+The sole external serial port, `Serial1`, will need to be validated with a simple loopback functionality (connect TX to RX and watch it read back whatever you type into it) at 9600bps 8N1 and 115200bps 8N1 protocols.
+
+#### EVT4 Series: Basic projects
+
+This section will go over all the basic projects that the SSTuino II should be perfectly capable of performing.
+
+##### EVT4-1: 
+
+Work in progress....
+
+### Product Validation Test (PVT)
+
+PVT performs an initial production batch of 5% of the full production run, locking in all aspects of the project such as the Bill-of-Materials, circuit board and mechanical design, circuit board specifications among many other factors.
+
+This final test will run identical tests to those defined in EVT, but on a different subset of products. Additionally, it will lay down the required specifications for the test jigs and automated testing programs in anticipation of the next stage, MPQC. 
+
+### Mass Production Quality Control (MPQC)
+
+In mass production, the product will have to go through a short but comprehensive automated test to both flash the firmwares to the 3 major chips on the board, but also to test for end-to-end functionality.
