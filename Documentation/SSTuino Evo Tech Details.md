@@ -393,6 +393,8 @@ This section will go through all the exact tests that the EVT stage will conduct
 
 All digital I/O must be able to write and read a digital signal with no error. They must be able to generate a stable clock signal and inspected by an oscilloscope to verify their signal characteristics (bit-bang). For pins with PWM capability, they must be able to emit the desired PWM percentage at the pre-defined frequency, validated by means of an oscilloscope.
 
+For digital inputs, they must be tested with a simple pushbutton test with pull-up/down resistor.
+
 #### EVT2: Analogue inputs
 
 All pins capable of analogue inputs must be tested with a simple potentiometer and serial readout of the analogue voltage.
@@ -401,13 +403,25 @@ All pins capable of analogue inputs must be tested with a simple potentiometer a
 
 The sole external serial port, `Serial1`, will need to be validated with a simple loopback functionality (connect TX to RX and watch it read back whatever you type into it) at 9600bps 8N1 and 115200bps 8N1 protocols.
 
-#### EVT4 Series: Basic projects
+#### EVT4: I2C functionality
+
+#### EVT5 Series: Basic projects
 
 This section will go over all the basic projects that the SSTuino II should be perfectly capable of performing.
 
-##### EVT4-1: 
+##### EVT5-1: Ultrasonic sensor
 
-Work in progress....
+An ultrasonic sensor is a basic sensor that requires precise timing to produce correct results. As such, an ultrasonic sensor should be tested with the SSTuino for accuracy.
+
+##### EVT5-2: HTTP(S) connected applications
+
+The device shall be able to connect to HTTP(S) endpoints to GET as well as to POST requests. Adafruit IO's HTTP interface is an ideal playground to get started with these requests.
+
+##### EVT5-3: MQTT connected applications
+
+The device shall be able to connect to MQTT endpoints to publish and subscribe to endpoints. More importantly, the publish and subscribe should be mixed together in the same program (reflecting many real life applications) and the subscribe function must not drop out during normal operations due to signal integrity issues. A good example would be to subscribe to a colour and hence reprogram the RGB LED on the board through the internet.
+
+This is also a good chance to test the QoS capabilities of MQTT, with the ability to guarantee delivery of messages with QoS level 1.
 
 ### Product Validation Test (PVT)
 
