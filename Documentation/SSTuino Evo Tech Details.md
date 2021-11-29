@@ -161,11 +161,20 @@ After the Bootloader is loaded onto the SAMD11, it's time to load the firmware. 
 2.  Install MattairTech SAM D|L|C core for Arduino - Beta build v1.6.18-beta-b1
 3.  Download **bootloader** binary blob from 
 4.  Flash bootloader to device
-5.  Flash the MuxTO **firmware** to device with the following command (over USB, NOT over the debugger!!): 
+5.  Short SWDIO to GND
+6.  Flash the MuxTO **firmware** to device with the following command (over USB, NOT over the debugger!!): 
 
     ```
     ~/Library/Arduino15/packages/MattairTech_Arduino/tools/bossac/1.7.0-mattairtech-3/bossac -i -d --port=/dev/cu.usbmodem14101 -U true -i -e -w -v ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.hex
     ```
+    
+    The correct way to do it is:
+    
+    ```
+    ./bossac --port=/dev/cu.usbmodem14101 -U true -i -e -w -v ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.bin -R
+    ```
+
+Alternatively, it should be possible to flash the hex file directly to the system through the same PyOCD interface by running the following command: `pyocd flash -t atsamd11d14as ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.hex --pack ~/Downloads/Microchip.SAMD11_DFP.2.5.61.atpack`
 
 
 At this point, we're not done yet. We need to patch MegaCoreX's `boards.txt` with our own custom configuration to let MuxTO work through a hacky version of JTAG2UPDI:
@@ -188,15 +197,9 @@ Compilation options available here: `arduino:samd:muxto:float=default,config=ena
 
 [Link](https://github.com/arduino/ArduinoCore-megaavr/blob/master/.github/workflows/compile-muxto.yml)
 
-If the bootloader + MuxTO firmware is already on the chip, short SWDIO to GND to enter bootloader mode for direct USB programming.
+If the bootloader + an existing firmware is already on the chip, short SWDIO to GND to enter bootloader mode for direct USB programming.
 
 During the flashing of the ATmega4809 target, the programmer type needs to be JTAG2UPDI, as it essentially pretends to be a JTAG device, with a bit of a special 1200bps handshake in between. You will need to specify the target serial port.
-
-During the flashing process to the ATMega4809, this command is invoked: `/Users/panziyue/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino18/bin/avrdude -C/Users/panziyue/Library/Arduino15/packages/MegaCoreX/hardware/megaavr/1.0.8/avrdude.conf -v -patmega4809 -cjtag2updi -P/dev/cu.usbmodem14101 -e -Uflash:w:/var/folders/dx/mwn31wlj3db_q1112jfbg5qc0000gn/T/arduino_build_912921/Nina_RGB.ino.hex:i {bootloader.fuse0} {bootloader.fuse1} {bootloader.fuse2} {bootloader.fuse4} {bootloader.fuse5} {bootloader.fuse6} {bootloader.fuse7} {bootloader.fuse8} {bootloader.lock}`
-
-Each module for the fuse looks like: `-Ufuse0:w:{bootloader.WDTCFG}:m`
-
-For reading fuses: `/Users/panziyue/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino18/bin/avrdude -C/Users/panziyue/Library/Arduino15/packages/MegaCoreX/hardware/megaavr/1.0.8/avrdude.conf -patmega4809 -cjtag2updi -P/dev/cu.usbmodem14101 -Ufuse0:r:-:h`
 
 These were the fuses returned by avrdude:
 
@@ -332,6 +335,14 @@ Need to double check the LED's polarity markings for a proper placement.
 
 The ESP32 Module acts as a wireless coprocessor and handles Wi-Fi and Bluetooth connections. Given the right tools, it can be modified or "hacked" to behave as if it's the master. The design of the ESP32 Module can be traced back to the design of the [Adafruit AirLift breakout board](https://learn.adafruit.com/adafruit-airlift-breakout/downloads)
 
+### Firmware uploading
+
+One can upload the firmware using a Serial bypass called `SerialNINAPassthrough`, which passes through the USB serial port to Serial1, which is then manually linked to the ESP32's 5V tolerant serial port (so you just need a jumper cable).
+
+Flash the firmware using the following command:
+
+`esptool.py --port /dev/cu.usbmodem14101 --before no_reset --baud 115200 write_flash 0 ~/Downloads/NINA_W102-1.7.4.bin`
+
 ### Decoupling circuitry
 
 Decoupling is handled by a 100uF tantalum capacitor and a 0.1uF ceramic capacitor. This design is validated with the NodeMCU-32 design.
@@ -391,7 +402,9 @@ This section will go through all the exact tests that the EVT stage will conduct
 
 #### EVT1: Digital I/O
 
-All digital I/O must be able to write and read a digital signal with no error. They must be able to generate a stable clock signal and inspected by an oscilloscope to verify their signal characteristics (bit-bang). For pins with PWM capability, they must be able to emit the desired PWM percentage at the pre-defined frequency, validated by means of an oscilloscope.
+All digital I/O must be able to write and read a digital signal with no error. They must be able to generate a stable clock signal and inspected by an oscilloscope to verify their signal characteristics (bit-bang). For pins with PWM capability, they must be able to emit the desired PWM percentage at the pre-defined frequency, validated by means of an oscilloscope. For the purposes of this test, a simple program is used to trigger pins based on serial input. [WORKING]
+
+It would also be good to test the performance of Servo-related libraries, to check if it is able to actuate a servo under certain circumstances. [WORKING]
 
 For digital inputs, they must be tested with a simple pushbutton test with pull-up/down resistor.
 
@@ -401,9 +414,11 @@ All pins capable of analogue inputs must be tested with a simple potentiometer a
 
 #### EVT3: Serial ports
 
-The sole external serial port, `Serial1`, will need to be validated with a simple loopback functionality (connect TX to RX and watch it read back whatever you type into it) at 9600bps 8N1 and 115200bps 8N1 protocols.
+The sole external serial port provided to the user, `Serial1`, will need to be validated with a simple loopback functionality (connect TX to RX and watch it read back whatever you type into it) at 9600bps 8N1 and 115200bps 8N1 protocols.
 
 #### EVT4: I2C functionality
+
+Test out I2C peripherals, such as screen and sensors. [WORKING]
 
 #### EVT5 Series: Basic projects
 
@@ -411,17 +426,28 @@ This section will go over all the basic projects that the SSTuino II should be p
 
 ##### EVT5-1: Ultrasonic sensor
 
-An ultrasonic sensor is a basic sensor that requires precise timing to produce correct results. As such, an ultrasonic sensor should be tested with the SSTuino for accuracy.
+An ultrasonic sensor is a basic sensor that requires precise signal timing to produce correct results. As such, an ultrasonic sensor should be tested with the SSTuino for accuracy.
 
 ##### EVT5-2: HTTP(S) connected applications
 
-The device shall be able to connect to HTTP(S) endpoints to GET as well as to POST requests. Adafruit IO's HTTP interface is an ideal playground to get started with these requests.
+The device shall be able to connect to HTTP(S) endpoints to GET as well as to POST requests. Adafruit IO's HTTP interface is an ideal playground to get started with these requests. To extend the HTTP(S) testing, simple JSON decoding should also be tested. [WORKING]
 
 ##### EVT5-3: MQTT connected applications
 
-The device shall be able to connect to MQTT endpoints to publish and subscribe to endpoints. More importantly, the publish and subscribe should be mixed together in the same program (reflecting many real life applications) and the subscribe function must not drop out during normal operations due to signal integrity issues. A good example would be to subscribe to a colour and hence reprogram the RGB LED on the board through the internet.
+The device shall be able to connect to MQTT endpoints to publish and subscribe to endpoints. More importantly, the publish and subscribe should be mixed together in the same program (reflecting many real life applications) and the subscribe function must not drop out during normal operations due to signal integrity issues. A good example would be to subscribe to a colour and hence reprogram the RGB LED on the board through the internet. [WORKING]
 
-This is also a good chance to test the QoS capabilities of MQTT, with the ability to guarantee delivery of messages with QoS level 1.
+In addition, a test should be done for simultaneous subscribe and publish, to ensure that extended functionality like this works. [WORKING]
+
+This is also a good chance to test the QoS capabilities of MQTT, with the ability to guarantee delivery of messages with QoS level 1. [WORKING]
+
+#### EVT6: Connection with host computers
+
+Need to test connection of device with various host computers including:
+
+* Intel Mac with USB-A
+* Intel Mac with USB-C
+* AS Mac with USB-C
+* Windows PC
 
 ### Product Validation Test (PVT)
 
@@ -432,3 +458,31 @@ This final test will run identical tests to those defined in EVT, but on a diffe
 ### Mass Production Quality Control (MPQC)
 
 In mass production, the product will have to go through a short but comprehensive automated test to both flash the firmwares to the 3 major chips on the board, but also to test for end-to-end functionality.
+
+For more information regarding the good use of rigorous testing programs, check out [this article](https://www.bunniestudios.com/blog/?p=5450). For testing and reverse logistics, check out [this article](https://www.bunniestudios.com/blog/?p=4981).
+
+The proposed program scheme is as follows:
+
+1. Upload **SAMD11**'s bootloader and program both through PyOCD
+2. (Optional) Protect the bootloader by locking the boot sector
+3. Reset the **SAMD11** for it to be recognised as a different USB device
+4. Check if USB device is connected and recognised (with VID and PID)
+5. Upload to **Mega4809** the passthrough program to reprogram the ESP32
+6. Invoke `esptool.py` to upload to **ESP32** the AirLift firmware
+7. Upload to the **Mega4809** a testing firmware to QC it, with serial responses
+
+The final QC program will consist of the following functions:
+
+* Blink the LED_BUILTIN for 3 seconds
+* Run an RGB routine on the ESP32's RGB LED for 3 seconds, all the way to full power
+* (Optional?) Test every pin's digital power out. This will need some sort of an external device that's reading every single pin. A cheaper way is to use LED lights, but that may result in more operator error. In addition, add a buzzer connected to one of the pins to indicate success or failure of QC.
+* (Optional?) Test analog values (maybe using resistive dividers?) for all the analog pins
+* Connect to Wi-Fi
+* Run a MQTT publish operation
+* Run a HTTPS GET operation on an endpoint (validating if the MQTT publish action has completed correctly, for example)
+
+
+Some of the other factors we need to take into consideration are:
+
+* "Auditability" of test: how auditable the test is. The article above proposed a log that's burnt into the chip, giving each and every board a fully auditable history right in the silicon.
+* Updating the test jig and remote testing: make sure that in larger production runs where the testing is done offsite, that you are able to OTA update the test jig and to be able to fully replicate a test jig's behaviour locally before transmitting the testing firmware offsite. Currently the SSTuino II has no such requirement
