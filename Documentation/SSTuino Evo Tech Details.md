@@ -162,20 +162,13 @@ After the Bootloader is loaded onto the SAMD11, it's time to load the firmware. 
 3.  Download **bootloader** binary blob from 
 4.  Flash bootloader to device
 5.  Short SWDIO to GND
-6.  Flash the MuxTO **firmware** to device with the following command (over USB, NOT over the debugger!!): 
-
+6.  Flash the MuxTO **firmware** to device with the following command over the native USB port: 
+        
     ```
-    ~/Library/Arduino15/packages/MattairTech_Arduino/tools/bossac/1.7.0-mattairtech-3/bossac -i -d --port=/dev/cu.usbmodem14101 -U true -i -e -w -v ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.hex
-    ```
-    
-    The correct way to do it is:
-    
-    ```
-    ./bossac --port=/dev/cu.usbmodem14101 -U true -i -e -w -v ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.bin -R
+    ./bossac --port=/dev/cu.usbmodem14101 -U true -i -e -w -v ./MuxTO_SST.bin -R
     ```
 
-Alternatively, it should be possible to flash the hex file directly to the system through the same PyOCD interface by running the following command: `pyocd flash -t atsamd11d14as ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.hex --pack ~/Downloads/Microchip.SAMD11_DFP.2.5.61.atpack`
-
+Alternatively, it should be possible to flash the hex file directly to the system through the same CMSIS-DAP PyOCD interface by running the following command: `pyocd flash -t atsamd11d14as ~/Library/Arduino15/packages/arduino/hardware/megaavr/1.8.7/firmwares/MuxTO/MuxTO.hex --pack ~/Downloads/Microchip.SAMD11_DFP.2.5.61.atpack`
 
 At this point, we're not done yet. We need to patch MegaCoreX's `boards.txt` with our own custom configuration to let MuxTO work through a hacky version of JTAG2UPDI:
 
@@ -197,9 +190,13 @@ Compilation options available here: `arduino:samd:muxto:float=default,config=ena
 
 [Link](https://github.com/arduino/ArduinoCore-megaavr/blob/master/.github/workflows/compile-muxto.yml)
 
+If you wish to change the MuxTO firmware without recompilation, you can directly edit the `MuxTO.bin` file using a hex editor. 
+
+For example, the USB VID and PID can be edited at offset 0x2E3C, with an order of `[VID LSB][VID MSB][PID LSB][PID MSB]` (least and most significant *byte*, not bit). For more details, see this [line of code in Arduino Core](https://github.com/arduino/ArduinoCore-samd/blob/9f91accecc8298976670234e4d6ac0afef5c7a39/bootloaders/zero/sam_ba_usb.c#L47)
+
 If the bootloader + an existing firmware is already on the chip, short SWDIO to GND to enter bootloader mode for direct USB programming.
 
-During the flashing of the ATmega4809 target, the programmer type needs to be JTAG2UPDI, as it essentially pretends to be a JTAG device, with a bit of a special 1200bps handshake in between. You will need to specify the target serial port.
+During the flashing of the ATmega4809 target, the programmer type needs to be JTAG2UPDI, as it essentially pretends to be a JTAG device, with a bit of a special 1200bps handshake in between to initiate the UPDI process. You will need to specify the target serial port.
 
 These were the fuses returned by avrdude:
 
@@ -406,15 +403,15 @@ All digital I/O must be able to write and read a digital signal with no error. T
 
 It would also be good to test the performance of Servo-related libraries, to check if it is able to actuate a servo under certain circumstances. [WORKING]
 
-For digital inputs, they must be tested with a simple pushbutton test with pull-up/down resistor.
+For digital inputs, they must be tested with a simple pushbutton test with pull-up/down resistor. [WORKING]
 
 #### EVT2: Analogue inputs
 
-All pins capable of analogue inputs must be tested with a simple potentiometer and serial readout of the analogue voltage.
+All pins capable of analogue inputs must be tested with a simple potentiometer and serial readout of the analogue voltage. [WORKING]
 
 #### EVT3: Serial ports
 
-The sole external serial port provided to the user, `Serial1`, will need to be validated with a simple loopback functionality (connect TX to RX and watch it read back whatever you type into it) at 9600bps 8N1 and 115200bps 8N1 protocols.
+The sole external serial port provided to the user, `Serial1`, will need to be validated with a simple loopback functionality (connect TX to RX and watch it read back whatever you type into it) at 9600bps 8N1 and 115200bps 8N1 protocols. [WORKING]
 
 #### EVT4: I2C functionality
 
@@ -426,7 +423,7 @@ This section will go over all the basic projects that the SSTuino II should be p
 
 ##### EVT5-1: Ultrasonic sensor
 
-An ultrasonic sensor is a basic sensor that requires precise signal timing to produce correct results. As such, an ultrasonic sensor should be tested with the SSTuino for accuracy.
+An ultrasonic sensor is a basic sensor that requires precise signal timing to produce correct results. As such, an ultrasonic sensor should be tested with the SSTuino for accuracy. [WORKING]
 
 ##### EVT5-2: HTTP(S) connected applications
 
@@ -442,12 +439,15 @@ This is also a good chance to test the QoS capabilities of MQTT, with the abilit
 
 #### EVT6: Connection with host computers
 
-Need to test connection of device with various host computers including:
+This device will need to test its connection of device with various host computers including:
 
-* Intel Mac with USB-A
-* Intel Mac with USB-C
-* AS Mac with USB-C
-* Windows PC
+* Intel Mac with USB-A (USB 3) [WORKING]
+* Intel Mac with USB-C (TB3/4) [WORKING]
+* Apple Silicon Mac with USB-C (TB4) [WORKING]
+* Windows PC with USB-A (USB 3/2) [WORKING]
+* Windows PC with USB-C (USB 3/TB3/TB4)
+
+Our USB PID/VID combo is 0x557D/0x1206. For reference to our application on `pidcodes`, please click [this link](https://github.com/pidcodes/pidcodes.github.com/pull/704)
 
 ### Product Validation Test (PVT)
 
