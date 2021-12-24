@@ -5770,6 +5770,54 @@ Alternate pin configuration
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
+<package name="1X04_1MM_RA" urn="urn:adsk.eagle:footprint:37714/1" library_version="1">
+<description>&lt;h3&gt;SMD- 4 Pin Right Angle &lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:4&lt;/li&gt;
+&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;CONN_04&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="-1.5" y1="-4.6" x2="1.5" y2="-4.6" width="0.254" layer="21"/>
+<wire x1="-3" y1="-2" x2="-3" y2="-0.35" width="0.254" layer="21"/>
+<wire x1="2.25" y1="-0.35" x2="3" y2="-0.35" width="0.254" layer="21"/>
+<wire x1="3" y1="-0.35" x2="3" y2="-2" width="0.254" layer="21"/>
+<wire x1="-3" y1="-0.35" x2="-2.25" y2="-0.35" width="0.254" layer="21"/>
+<circle x="-2.5" y="0.3" radius="0.1414" width="0.4" layer="21"/>
+<smd name="NC2" x="-2.8" y="-3.675" dx="1.2" dy="2" layer="1"/>
+<smd name="NC1" x="2.8" y="-3.675" dx="1.2" dy="2" layer="1"/>
+<smd name="1" x="-1.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<smd name="2" x="-0.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<smd name="3" x="0.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<smd name="4" x="1.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<text x="-1.397" y="-2.159" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.651" y="-3.302" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+<package name="1X04_1MM_RA_STRESSRELIEF" urn="urn:adsk.eagle:footprint:37987/1" library_version="1">
+<description>Qwiic connector with milled cutout. Sliding the cable into this slot prevents the cable from coming unplugged.</description>
+<wire x1="-1.5" y1="-4.6" x2="1.5" y2="-4.6" width="0.254" layer="21"/>
+<wire x1="-3" y1="-2" x2="-3" y2="-0.35" width="0.254" layer="21"/>
+<wire x1="2.25" y1="-0.35" x2="3" y2="-0.35" width="0.254" layer="21"/>
+<wire x1="3" y1="-0.35" x2="3" y2="-2" width="0.254" layer="21"/>
+<wire x1="-3" y1="-0.35" x2="-2.25" y2="-0.35" width="0.254" layer="21"/>
+<wire x1="-2" y1="-10.16" x2="-2" y2="-8" width="0.3048" layer="20"/>
+<wire x1="-2" y1="-8" x2="4" y2="-8" width="0.3048" layer="20"/>
+<wire x1="4" y1="-8" x2="4" y2="-6" width="0.3048" layer="20"/>
+<wire x1="4" y1="-6" x2="-4" y2="-6" width="0.3048" layer="20"/>
+<wire x1="-4" y1="-6" x2="-4" y2="-10.16" width="0.3048" layer="20"/>
+<circle x="-2.5" y="0.3" radius="0.1414" width="0.4" layer="21"/>
+<smd name="NC2" x="-2.8" y="-3.675" dx="1.2" dy="2" layer="1"/>
+<smd name="NC1" x="2.8" y="-3.675" dx="1.2" dy="2" layer="1"/>
+<smd name="1" x="-1.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<smd name="2" x="-0.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<smd name="3" x="0.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<smd name="4" x="1.5" y="0" dx="0.6" dy="1.35" layer="1"/>
+<text x="-1.397" y="-2.159" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.651" y="-3.302" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+<rectangle x1="-4" y1="-8" x2="4" y2="-6" layer="46"/>
+<rectangle x1="-4" y1="-10" x2="-2" y2="-8" layer="46"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X14" urn="urn:adsk.eagle:package:38183/1" type="box" library_version="1">
@@ -6150,6 +6198,25 @@ CONN_19
 <packageinstance name="1X19_NO_SILK"/>
 </packageinstances>
 </package3d>
+<package3d name="1X04_1MM_RA" urn="urn:adsk.eagle:package:38096/1" type="box" library_version="1">
+<description>SMD- 4 Pin Right Angle 
+Specifications:
+Pin count:4
+Pin pitch:0.1"
+
+Example device(s):
+CONN_04
+</description>
+<packageinstances>
+<packageinstance name="1X04_1MM_RA"/>
+</packageinstances>
+</package3d>
+<package3d name="1X04_1MM_RA_STRESSRELIEF" urn="urn:adsk.eagle:package:38303/1" type="box" library_version="1">
+<description>Qwiic connector with milled cutout. Sliding the cable into this slot prevents the cable from coming unplugged.</description>
+<packageinstances>
+<packageinstance name="1X04_1MM_RA_STRESSRELIEF"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
 <symbol name="CONN_14" urn="urn:adsk.eagle:symbol:37811/1" library_version="1">
@@ -6256,6 +6323,28 @@ CONN_19
 <pin name="17" x="10.16" y="17.78" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="18" x="10.16" y="20.32" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="19" x="10.16" y="22.86" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="I2C_STANDARD-1" urn="urn:adsk.eagle:symbol:37986/1" library_version="1">
+<description>&lt;h3&gt;SparkFun I&lt;sup&gt;2&lt;/sup&gt;C Standard Pinout Header&lt;/h3&gt;
+&lt;p&gt;SparkFun has standardized on a pinout for all I&lt;sup&gt;2&lt;/sup&gt;C based sensor breakouts.&lt;br&gt;</description>
+<wire x1="3.81" y1="-5.08" x2="-5.08" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.6096" layer="94"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="3.81" y1="-5.08" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="7.62" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="2.54" y2="5.08" width="0.6096" layer="94"/>
+<text x="-5.08" y="-5.334" size="1.778" layer="96" font="vector" align="top-left">&gt;VALUE</text>
+<text x="-5.08" y="7.874" size="1.778" layer="95" font="vector">&gt;NAME</text>
+<text x="-4.572" y="2.54" size="1.778" layer="94" font="vector" align="center-left">SDA</text>
+<text x="-4.572" y="0" size="1.778" layer="94" font="vector" align="center-left">VCC</text>
+<text x="-4.572" y="-2.54" size="1.778" layer="94" font="vector" align="center-left">GND</text>
+<text x="-4.572" y="5.08" size="1.778" layer="94" font="vector" align="center-left">SCL</text>
+<pin name="GND" x="7.62" y="-2.54" visible="pad" length="middle" direction="pwr" swaplevel="1" rot="R180"/>
+<pin name="VCC" x="7.62" y="0" visible="pad" length="middle" direction="pwr" swaplevel="1" rot="R180"/>
+<pin name="SDA" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="SCL" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -6909,6 +6998,47 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </device>
 </devices>
 </deviceset>
+<deviceset name="QWIIC_CONNECTOR" urn="urn:adsk.eagle:component:38395/1" prefix="J" uservalue="yes" library_version="1">
+<description>&lt;h3&gt;SparkFun I&lt;sup&gt;2&lt;/sup&gt;C Standard Qwiic Connector&lt;/h3&gt;
+An SMD 1mm pitch JST connector makes it easy and quick (get it? Qwiic?) to connect I&lt;sup&gt;2&lt;/sup&gt;C devices to each other. The &lt;a href=”http://www.sparkfun.com/qwiic”&gt;Qwiic system&lt;/a&gt; enables fast and solderless connection between popular platforms and various sensors and actuators.
+
+&lt;br&gt;&lt;br&gt;
+
+We carry &lt;a href=”https://www.sparkfun.com/products/14204”&gt;200mm&lt;/a&gt;, &lt;a href=”https://www.sparkfun.com/products/14205”&gt;100mm&lt;/a&gt;, &lt;a href=”https://www.sparkfun.com/products/14206”&gt;50mm&lt;/a&gt;, and &lt;a href=”https://www.sparkfun.com/products/14207”&gt;breadboard friendly&lt;/a&gt; Qwiic cables. We also offer &lt;a href=”https://www.sparkfun.com/products/14323”&gt;10 pcs strips&lt;/a&gt; the SMD connectors.</description>
+<gates>
+<gate name="J1" symbol="I2C_STANDARD-1" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="JS-1MM" package="1X04_1MM_RA">
+<connects>
+<connect gate="J1" pin="GND" pad="1"/>
+<connect gate="J1" pin="SCL" pad="4"/>
+<connect gate="J1" pin="SDA" pad="3"/>
+<connect gate="J1" pin="VCC" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38096/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SR" package="1X04_1MM_RA_STRESSRELIEF">
+<connects>
+<connect gate="J1" pin="GND" pad="1"/>
+<connect gate="J1" pin="SCL" pad="4"/>
+<connect gate="J1" pin="SDA" pad="3"/>
+<connect gate="J1" pin="VCC" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38303/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -7225,11 +7355,13 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </part>
 <part name="FRAME3" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="FRAME-A4L" device=""/>
 <part name="FRAME4" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="FRAME-A4L" device=""/>
+<part name="SPI" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="QWIIC_CONNECTOR" device="JS-1MM" package3d_urn="urn:adsk.eagle:package:38096/1"/>
+<part name="GND19" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="5.08" y="5.08" size="1.778" layer="91">Via diameter of 0.35mm, min 0.2mm, recommend 0.5mm</text>
+<text x="5.08" y="5.08" size="1.778" layer="97">Via diameter of 0.35mm, min 0.2mm, recommend 0.5mm</text>
 <text x="109.22" y="170.18" size="5.08" layer="97">USB Interface</text>
 <wire x1="0" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="97"/>
 <wire x1="73.66" y1="91.44" x2="106.68" y2="91.44" width="0.1524" layer="97"/>
@@ -7252,6 +7384,8 @@ ESD Protection</text>
 <text x="215.9" y="160.02" size="3.81" layer="97">Level Shifting</text>
 <text x="218.44" y="-12.7" size="1.9304" layer="97">Pinout Validation: 
 Logic Validation: </text>
+<text x="76.2" y="33.02" size="1.778" layer="97">JST SH Header repurposed as SPI</text>
+<text x="63.5" y="78.74" size="3.81" layer="97">SPI Port (Optional)</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
@@ -7412,6 +7546,13 @@ Logic Validation: </text>
 <attribute name="NAME" x="236.22" y="109.22" size="1.27" layer="95" font="vector" rot="R90" align="center"/>
 <attribute name="VALUE" x="238.76" y="109.22" size="1.016" layer="96" font="vector" ratio="15" rot="R90" align="center"/>
 </instance>
+<instance part="SPI" gate="J1" x="81.28" y="48.26" smashed="yes">
+<attribute name="VALUE" x="76.2" y="42.926" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="NAME" x="76.2" y="56.134" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="GND19" gate="1" x="91.44" y="38.1" smashed="yes">
+<attribute name="VALUE" x="91.44" y="37.846" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7481,6 +7622,12 @@ Logic Validation: </text>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="180.34" y1="134.62" x2="180.34" y2="137.16" width="0.1524" layer="91"/>
 <junction x="180.34" y="137.16"/>
+</segment>
+<segment>
+<pinref part="SPI" gate="J1" pin="GND"/>
+<wire x1="88.9" y1="45.72" x2="91.44" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="45.72" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="GND19" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="D_P" class="1">
@@ -7728,6 +7875,31 @@ Logic Validation: </text>
 <wire x1="172.72" y1="114.3" x2="193.04" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="114.3" x2="195.58" y2="111.76" width="0.1524" layer="91"/>
 <label x="175.26" y="111.76" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC0_MOSI" class="0">
+<segment>
+<pinref part="SPI" gate="J1" pin="SCL"/>
+<wire x1="88.9" y1="53.34" x2="93.98" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="53.34" x2="93.98" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
+<label x="99.06" y="55.88" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PC1_MISO" class="0">
+<segment>
+<pinref part="SPI" gate="J1" pin="SDA"/>
+<wire x1="88.9" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
+<label x="99.06" y="50.8" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PC2_SCK" class="0">
+<segment>
+<pinref part="SPI" gate="J1" pin="VCC"/>
+<wire x1="88.9" y1="48.26" x2="93.98" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="48.26" x2="93.98" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
+<label x="99.06" y="45.72" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
