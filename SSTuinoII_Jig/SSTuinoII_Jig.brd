@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="12.5" altunitdist="mil" altunit="mil"/>
@@ -186,9 +186,9 @@
 <board>
 <plain>
 <wire x1="0" y1="0" x2="79.99" y2="0" width="0" layer="20"/>
-<wire x1="79.99" y1="0" x2="79.99" y2="71.12" width="0" layer="20"/>
-<wire x1="79.99" y1="71.12" x2="0" y2="71.12" width="0" layer="20"/>
-<wire x1="0" y1="71.12" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="79.99" y1="0" x2="79.99" y2="72.39" width="0" layer="20"/>
+<wire x1="79.99" y1="72.39" x2="0" y2="72.39" width="0" layer="20"/>
+<wire x1="0" y1="72.39" x2="0" y2="0" width="0" layer="20"/>
 <text x="75.2475" y="47.625" size="1.778" layer="21" font="vector" ratio="14" rot="R90" align="center-left">SSTuino II Test Jig
 RevA 2021 Dec</text>
 <text x="12.3825" y="17.78" size="1.016" layer="21" font="vector" ratio="12" align="center">CLK</text>
@@ -840,6 +840,56 @@ Dimensional Drawing</description>
 </package3d>
 </packages3d>
 </library>
+<library name="transistor-fet" urn="urn:adsk.eagle:library:396">
+<description>&lt;b&gt;Field Effect Transistors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;&lt;p&gt;
+&lt;p&gt;
+Symbols changed according to IEC617&lt;p&gt; 
+All types, packages and assignment to symbols and pins checked&lt;p&gt;
+Package outlines partly checked&lt;p&gt;
+&lt;p&gt;
+JFET = junction FET&lt;p&gt;
+IGBT-x = insulated gate bipolar transistor&lt;p&gt;
+x=N: NPN; x=P: PNP&lt;p&gt;
+IGFET-mc-nnn; (IGFET=insulated gate field effect transistor)&lt;P&gt;
+m=D: depletion mode (Verdr&amp;auml;ngungstyp)&lt;p&gt;
+m=E: enhancement mode (Anreicherungstyp)&lt;p&gt;
+c: N=N-channel; P=P-Channel&lt;p&gt;
+GDSB: gate, drain, source, bulk&lt;p&gt;
+&lt;p&gt;
+by R. Vogg  15.March.2002</description>
+<packages>
+<package name="TO92" urn="urn:adsk.eagle:footprint:28459/1" library_version="5">
+<description>&lt;b&gt;TO 92&lt;/b&gt;</description>
+<wire x1="-2.0946" y1="-1.651" x2="-2.6549" y2="-0.254" width="0.127" layer="21" curve="-32.781"/>
+<wire x1="-2.6549" y1="-0.254" x2="-0.7863" y2="2.5485" width="0.127" layer="21" curve="-78.3185"/>
+<wire x1="0.7863" y1="2.5484" x2="2.0945" y2="-1.651" width="0.127" layer="21" curve="-111.1"/>
+<wire x1="-2.0945" y1="-1.651" x2="2.0945" y2="-1.651" width="0.127" layer="21"/>
+<wire x1="-2.2537" y1="-0.254" x2="-0.2863" y2="-0.254" width="0.127" layer="51"/>
+<wire x1="-2.6549" y1="-0.254" x2="-2.2537" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="-0.2863" y1="-0.254" x2="0.2863" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="2.2537" y1="-0.254" x2="2.6549" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="0.2863" y1="-0.254" x2="2.2537" y2="-0.254" width="0.127" layer="51"/>
+<wire x1="-0.7863" y1="2.5485" x2="0.7863" y2="2.5485" width="0.127" layer="51" curve="-34.2936"/>
+<pad name="1" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="2" x="0" y="1.905" drill="0.8128" shape="octagon"/>
+<pad name="3" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
+<text x="3.175" y="0.635" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="3.175" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-0.635" y="0.635" size="1.27" layer="51" ratio="10">2</text>
+<text x="-2.159" y="0" size="1.27" layer="51" ratio="10">3</text>
+<text x="1.143" y="0" size="1.27" layer="51" ratio="10">1</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="TO92" urn="urn:adsk.eagle:package:28523/2" type="model" library_version="5">
+<description>TO 92</description>
+<packageinstances>
+<packageinstance name="TO92"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1025,9 +1075,9 @@ Dimensional Drawing</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$1" library="D3ltav's Custom" package="ARIES_40-6554-10" value="ARIES_40-6554-10" x="17.78" y="59.69" smashed="yes">
-<attribute name="NAME" x="16.51" y="67.31" size="1.27" layer="25" font="vector" ratio="12"/>
-<attribute name="VALUE" x="25.4" y="25.4" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+<element name="U$1" library="D3ltav's Custom" package="ARIES_40-6554-10" value="ARIES_40-6554-10" x="17.78" y="60.96" smashed="yes">
+<attribute name="NAME" x="16.51" y="68.58" size="1.27" layer="25" font="vector" ratio="12"/>
+<attribute name="VALUE" x="25.4" y="26.67" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
 </element>
 <element name="U$2" library="D3ltav's Custom" package="ARIES_40-6554-10" value="ARIES_40-6554-10" x="66.04" y="11.43" smashed="yes" rot="R180">
 <attribute name="NAME" x="66.04" y="3.81" size="1.27" layer="25" font="vector" ratio="12" rot="R180"/>
@@ -1062,7 +1112,7 @@ Dimensional Drawing</description>
 <attribute name="PROD_ID" value="COMP-08253" x="6.985" y="63.5" size="2.1844" layer="27" ratio="12" rot="R90" display="off"/>
 <attribute name="SF_SKU" value="COM-07950" x="6.985" y="63.5" size="2.1844" layer="27" ratio="12" rot="R90" display="off"/>
 </element>
-<element name="Q1" library="Transistor" library_urn="urn:adsk.eagle:library:16378713" package="TO92" package3d_urn="urn:adsk.eagle:package:16378726/2" value="BS170" x="8.89" y="48.26" smashed="yes" rot="R180">
+<element name="Q3" library="Transistor" library_urn="urn:adsk.eagle:library:16378713" package="TO92" package3d_urn="urn:adsk.eagle:package:16378726/2" value="BS170" x="8.89" y="48.26" smashed="yes" rot="R180">
 <attribute name="CATEGORY" value="Transistor" x="8.89" y="48.26" size="2.1844" layer="27" ratio="12" rot="R180" display="off"/>
 <attribute name="DESCRIPTION" value="MOSFET N-CH 60V 500MA TO-92" x="8.89" y="48.26" size="2.1844" layer="27" ratio="12" rot="R180" display="off"/>
 <attribute name="DRAIN_CURRENT" value="500mA" x="8.89" y="48.26" size="2.1844" layer="27" ratio="12" rot="R180" display="off"/>
@@ -1104,6 +1154,11 @@ Dimensional Drawing</description>
 <attribute name="SF_SKU" value="COM-00102" x="5.08" y="31.75" size="2.1844" layer="27" ratio="12" display="off"/>
 <attribute name="VALUE" x="7.493" y="31.75" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
+<element name="Q1" library="transistor-fet" library_urn="urn:adsk.eagle:library:396" package="TO92" package3d_urn="urn:adsk.eagle:package:28523/2" value="BSS101" x="2.54" y="-15.24" smashed="yes">
+<attribute name="NAME" x="5.715" y="-14.605" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="1" x="2.54" y="-15.24" size="1.4224" layer="27" ratio="12" display="off"/>
+<attribute name="VALUE" x="5.715" y="-16.51" size="1.27" layer="27" ratio="10"/>
+</element>
 </elements>
 <signals>
 <signal name="TDI">
@@ -1118,11 +1173,11 @@ Dimensional Drawing</description>
 <wire x1="4.953" y1="12.7" x2="3.175" y2="14.478" width="0.4064" layer="1"/>
 <wire x1="3.81" y1="20.32" x2="3.175" y2="19.685" width="0.4064" layer="1"/>
 <wire x1="3.175" y1="14.478" x2="3.175" y2="19.685" width="0.4064" layer="1"/>
-<wire x1="33.02" y1="11.43" x2="30.48" y2="8.89" width="0.4064" layer="1"/>
+<wire x1="33.02" y1="12.7" x2="29.21" y2="8.89" width="0.4064" layer="1"/>
 <wire x1="11.43" y1="13.97" x2="11.43" y2="19.05" width="0.4064" layer="1"/>
 <wire x1="11.43" y1="19.05" x2="10.16" y2="20.32" width="0.4064" layer="1"/>
 <wire x1="10.16" y1="20.32" x2="3.81" y2="20.32" width="0.4064" layer="1"/>
-<wire x1="30.48" y1="8.89" x2="16.51" y2="8.89" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="8.89" x2="16.51" y2="8.89" width="0.4064" layer="1"/>
 <wire x1="16.51" y1="8.89" x2="11.43" y2="13.97" width="0.4064" layer="1"/>
 </signal>
 <signal name="U_TX">
@@ -1134,15 +1189,15 @@ Dimensional Drawing</description>
 <signal name="SWCLK">
 <contactref element="J1" pad="2"/>
 <contactref element="U$2" pad="P$39"/>
-<wire x1="50.8" y1="13.97" x2="44.45" y2="13.97" width="0.4064" layer="1"/>
-<wire x1="44.45" y1="13.97" x2="43.18" y2="12.7" width="0.4064" layer="1"/>
-<wire x1="43.18" y1="12.7" x2="43.18" y2="8.89" width="0.4064" layer="1"/>
 <wire x1="43.18" y1="8.89" x2="39.6875" y2="5.3975" width="0.4064" layer="1"/>
 <wire x1="17.4625" y1="5.3975" x2="10.16" y2="12.7" width="0.4064" layer="1"/>
 <wire x1="10.16" y1="12.7" x2="10.16" y2="16.51" width="0.4064" layer="1"/>
 <wire x1="10.16" y1="16.51" x2="8.89" y2="17.78" width="0.4064" layer="1"/>
 <wire x1="8.89" y1="17.78" x2="7.747" y2="17.78" width="0.4064" layer="1"/>
 <wire x1="39.6875" y1="5.3975" x2="17.4625" y2="5.3975" width="0.4064" layer="1"/>
+<wire x1="50.8" y1="13.97" x2="45.72" y2="13.97" width="0.4064" layer="1"/>
+<wire x1="45.72" y1="13.97" x2="43.18" y2="11.43" width="0.4064" layer="1"/>
+<wire x1="43.18" y1="11.43" x2="43.18" y2="8.89" width="0.4064" layer="1"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="J1" pad="6"/>
@@ -1160,10 +1215,10 @@ Dimensional Drawing</description>
 <wire x1="9.525" y1="40.64" x2="10.4775" y2="39.6875" width="1.016" layer="1"/>
 <wire x1="50.8" y1="59.69" x2="39.37" y2="59.69" width="1.016" layer="1"/>
 <wire x1="39.37" y1="59.69" x2="34.29" y2="64.77" width="1.016" layer="1"/>
-<wire x1="17.78" y1="64.77" x2="13.97" y2="60.96" width="1.016" layer="1"/>
-<wire x1="34.29" y1="64.77" x2="17.78" y2="64.77" width="1.016" layer="1"/>
+<wire x1="16.51" y1="64.77" x2="13.97" y2="62.23" width="1.016" layer="1"/>
+<wire x1="34.29" y1="64.77" x2="16.51" y2="64.77" width="1.016" layer="1"/>
 <wire x1="10.4775" y1="39.6875" x2="13.97" y2="43.18" width="1.016" layer="1"/>
-<wire x1="13.97" y1="43.18" x2="13.97" y2="60.96" width="1.016" layer="1"/>
+<wire x1="13.97" y1="43.18" x2="13.97" y2="62.23" width="1.016" layer="1"/>
 <wire x1="3.81" y1="40.64" x2="5.08" y2="39.37" width="1.016" layer="16"/>
 <wire x1="5.08" y1="39.37" x2="5.08" y2="34.4678" width="1.016" layer="16"/>
 </signal>
@@ -1171,8 +1226,8 @@ Dimensional Drawing</description>
 <contactref element="J1" pad="4"/>
 <contactref element="U$2" pad="P$22"/>
 <polygon width="0.4064" layer="1" isolate="0.3048">
-<vertex x="0" y="71.12"/>
-<vertex x="80.01" y="71.12"/>
+<vertex x="0" y="72.39"/>
+<vertex x="80.01" y="72.39"/>
 <vertex x="80.01" y="0"/>
 <vertex x="0" y="0"/>
 </polygon>
@@ -1181,8 +1236,8 @@ Dimensional Drawing</description>
 <contactref element="ESP_IO0" pad="1"/>
 <contactref element="ESP_RESET" pad="1"/>
 <polygon width="0.254" layer="16" isolate="0.4064">
-<vertex x="0" y="71.12"/>
-<vertex x="80.01" y="71.12"/>
+<vertex x="0" y="72.39"/>
+<vertex x="80.01" y="72.39"/>
 <vertex x="80.01" y="0"/>
 <vertex x="0" y="0"/>
 </polygon>
@@ -1190,7 +1245,7 @@ Dimensional Drawing</description>
 </signal>
 <signal name="3.3V">
 <contactref element="U$2" pad="P$37"/>
-<contactref element="Q1" pad="2"/>
+<contactref element="Q3" pad="2"/>
 <contactref element="R2" pad="P$2"/>
 <wire x1="1.905" y1="52.705" x2="3.81" y2="54.61" width="0.4064" layer="1"/>
 <wire x1="50.8" y1="19.05" x2="43.18" y2="19.05" width="1.016" layer="16"/>
@@ -1228,34 +1283,34 @@ Dimensional Drawing</description>
 <signal name="MEGA_RX">
 <contactref element="U$1" pad="P$39"/>
 <contactref element="ESPTX_J" pad="1"/>
-<wire x1="33.02" y1="57.15" x2="40.9575" y2="65.0875" width="0.4064" layer="16"/>
-<wire x1="40.9575" y1="65.0875" x2="40.9575" y2="68.8975" width="0.4064" layer="16"/>
+<wire x1="33.02" y1="58.42" x2="40.9575" y2="66.3575" width="0.4064" layer="16"/>
+<wire x1="40.9575" y1="66.3575" x2="40.9575" y2="68.8975" width="0.4064" layer="16"/>
 </signal>
 <signal name="MEGA_TX">
 <contactref element="U$1" pad="P$38"/>
 <contactref element="ESPRX_J" pad="1"/>
-<wire x1="33.02" y1="54.61" x2="47.3075" y2="68.8975" width="0.4064" layer="16"/>
-<wire x1="47.3075" y1="68.8975" x2="52.705" y2="68.8975" width="0.4064" layer="16"/>
+<wire x1="33.02" y1="55.88" x2="46.0375" y2="68.8975" width="0.4064" layer="16"/>
+<wire x1="46.0375" y1="68.8975" x2="52.705" y2="68.8975" width="0.4064" layer="16"/>
 </signal>
 <signal name="MEGA_D4">
 <contactref element="U$1" pad="P$35"/>
-<contactref element="Q1" pad="1"/>
+<contactref element="Q3" pad="1"/>
 <contactref element="R3" pad="P$1"/>
 <wire x1="3.81" y1="48.26" x2="7.62" y2="48.26" width="0.4064" layer="1"/>
 <wire x1="7.62" y1="48.26" x2="8.89" y2="49.53" width="0.4064" layer="16"/>
 <wire x1="8.89" y1="49.53" x2="13.97" y2="49.53" width="0.4064" layer="16"/>
 <wire x1="13.97" y1="49.53" x2="15.24" y2="50.8" width="0.4064" layer="16"/>
-<wire x1="15.24" y1="59.69" x2="17.78" y2="62.23" width="0.4064" layer="16"/>
-<wire x1="17.78" y1="62.23" x2="20.32" y2="62.23" width="0.4064" layer="16"/>
-<wire x1="20.32" y1="62.23" x2="30.48" y2="52.07" width="0.4064" layer="16"/>
-<wire x1="30.48" y1="52.07" x2="30.48" y2="48.26" width="0.4064" layer="16"/>
-<wire x1="30.48" y1="48.26" x2="31.75" y2="46.99" width="0.4064" layer="16"/>
-<wire x1="31.75" y1="46.99" x2="33.02" y2="46.99" width="0.4064" layer="16"/>
-<wire x1="15.24" y1="50.8" x2="15.24" y2="59.69" width="0.4064" layer="16"/>
+<wire x1="15.24" y1="60.96" x2="17.78" y2="63.5" width="0.4064" layer="16"/>
+<wire x1="17.78" y1="63.5" x2="19.05" y2="63.5" width="0.4064" layer="16"/>
+<wire x1="19.05" y1="63.5" x2="30.48" y2="52.07" width="0.4064" layer="16"/>
+<wire x1="15.24" y1="50.8" x2="15.24" y2="60.96" width="0.4064" layer="16"/>
+<wire x1="30.48" y1="52.07" x2="30.48" y2="49.53" width="0.4064" layer="16"/>
+<wire x1="30.48" y1="49.53" x2="31.75" y2="48.26" width="0.4064" layer="16"/>
+<wire x1="31.75" y1="48.26" x2="33.02" y2="48.26" width="0.4064" layer="16"/>
 </signal>
 <signal name="ESP_IO0">
 <contactref element="U$2" pad="P$27"/>
-<contactref element="Q1" pad="3"/>
+<contactref element="Q3" pad="3"/>
 <contactref element="R2" pad="P$1"/>
 <contactref element="ESP_IO0" pad="3"/>
 <wire x1="11.43" y1="54.61" x2="11.43" y2="49.53" width="0.4064" layer="1"/>
@@ -1269,9 +1324,9 @@ Dimensional Drawing</description>
 <wire x1="54.61" y1="44.45" x2="50.8" y2="44.45" width="0.4064" layer="1"/>
 <wire x1="59.69" y1="64.77" x2="55.88" y2="60.96" width="0.4064" layer="1"/>
 <wire x1="72.6694" y1="45.1612" x2="72.6694" y2="60.3631" width="0.4064" layer="16"/>
-<wire x1="62.6332" y1="70.3993" x2="23.4093" y2="70.3993" width="0.4064" layer="16"/>
-<wire x1="23.4093" y1="70.3993" x2="11.43" y2="58.42" width="0.4064" layer="16"/>
-<wire x1="11.43" y1="58.42" x2="11.43" y2="54.61" width="0.4064" layer="16"/>
+<wire x1="62.6332" y1="70.3993" x2="18.3293" y2="70.3993" width="0.4064" layer="16"/>
+<wire x1="18.3293" y1="70.3993" x2="11.43" y2="63.5" width="0.4064" layer="16"/>
+<wire x1="11.43" y1="63.5" x2="11.43" y2="54.61" width="0.4064" layer="16"/>
 <wire x1="72.6694" y1="60.3631" x2="62.6332" y2="70.3993" width="0.4064" layer="16"/>
 </signal>
 <signal name="ESP_EN">
@@ -1291,16 +1346,16 @@ Dimensional Drawing</description>
 <contactref element="LS1" pad="+"/>
 <wire x1="6.985" y1="66.75" x2="6.985" y2="65.405" width="0.4064" layer="1"/>
 <wire x1="0.9525" y1="59.3725" x2="6.985" y2="65.405" width="0.4064" layer="1"/>
-<wire x1="33.02" y1="44.45" x2="30.48" y2="44.45" width="0.4064" layer="1"/>
+<wire x1="33.02" y1="45.72" x2="29.21" y2="45.72" width="0.4064" layer="1"/>
 <wire x1="25.4" y1="49.53" x2="25.4" y2="59.69" width="0.4064" layer="1"/>
-<wire x1="25.4" y1="59.69" x2="22.86" y2="62.23" width="0.4064" layer="1"/>
-<wire x1="22.86" y1="62.23" x2="17.4625" y2="62.23" width="0.4064" layer="1"/>
-<wire x1="15.24" y1="60.0075" x2="15.24" y2="41.91" width="0.4064" layer="1"/>
+<wire x1="25.4" y1="59.69" x2="21.59" y2="63.5" width="0.4064" layer="1"/>
+<wire x1="21.59" y1="63.5" x2="17.4625" y2="63.5" width="0.4064" layer="1"/>
+<wire x1="15.24" y1="61.2775" x2="15.24" y2="41.91" width="0.4064" layer="1"/>
 <wire x1="15.24" y1="41.91" x2="10.16" y2="36.83" width="0.4064" layer="1"/>
 <wire x1="10.16" y1="36.83" x2="3.81" y2="36.83" width="0.4064" layer="1"/>
 <wire x1="3.81" y1="36.83" x2="0.9525" y2="39.6875" width="0.4064" layer="1"/>
-<wire x1="30.48" y1="44.45" x2="25.4" y2="49.53" width="0.4064" layer="1"/>
-<wire x1="17.4625" y1="62.23" x2="15.24" y2="60.0075" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="45.72" x2="25.4" y2="49.53" width="0.4064" layer="1"/>
+<wire x1="17.4625" y1="63.5" x2="15.24" y2="61.2775" width="0.4064" layer="1"/>
 <wire x1="0.9525" y1="39.6875" x2="0.9525" y2="59.3725" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWR">
