@@ -461,23 +461,26 @@ In mass production, the product will have to go through a short but comprehensiv
 
 For more information regarding the good use of rigorous testing programs, check out [this article](https://www.bunniestudios.com/blog/?p=5450). For testing and reverse logistics, check out [this article](https://www.bunniestudios.com/blog/?p=4981).
 
-The proposed program scheme is as follows:
+The proposed program scheme is as follows. It will be split into 2 phases:
+
+Phase 1, ARM Mode:
 
 1. Upload **SAMD11**'s bootloader and program both through PyOCD
 2. (Optional) Protect the bootloader by locking the boot sector
-3. Reset the **SAMD11** for it to be recognised as a different USB device
-4. Check if USB device is connected and recognised (with VID and PID)
-5. Upload to **Mega4809** the passthrough program to reprogram the ESP32
-6. Invoke `esptool.py` to upload to **ESP32** the AirLift firmware
-7. Upload to the **Mega4809** a testing firmware to QC it, with serial responses
+
+Phase 2, USB Mode:
+1. Check if USB device is connected and recognised (with VID and PID)
+2. Upload to **Mega4809** the passthrough program to reprogram the ESP32
+3. Invoke `esptool.py` to upload to **ESP32** the AirLift firmware
+4. Upload to the **Mega4809** a testing firmware to QC it, with serial responses
 
 The final QC program will consist of the following functions:
 
-* Blink the LED_BUILTIN for 3 seconds
-* Run an RGB routine on the ESP32's RGB LED for 3 seconds, all the way to full power
-* (Optional?) Test every pin's digital power out. This will need some sort of an external device that's reading every single pin. A cheaper way is to use LED lights, but that may result in more operator error. In addition, add a buzzer connected to one of the pins to indicate success or failure of QC.
-* (Optional?) Test analog values (maybe using resistive dividers?) for all the analog pins
-* Connect to Wi-Fi
+* Blink the LED_BUILTIN for 3 seconds [DONE]
+* Run an RGB routine on the ESP32's RGB LED for 3 seconds, all the way to full power [DONE]
+* (Optional?) Test every pin's digital power out. This will need some sort of an external device that's reading every single pin. A cheaper way is to use LED lights, but that may result in more operator error. In addition, add a buzzer connected to one of the pins to indicate success or failure of QC. [NOT IMPLEMENTED]
+* (Optional?) Test analog values (maybe using resistive dividers?) for all the analog pins [NOT IMPLEMENTED]
+* Connect to Wi-Fi [DONE]
 * Run a MQTT publish operation
 * Run a HTTPS GET operation on an endpoint (validating if the MQTT publish action has completed correctly, for example)
 
