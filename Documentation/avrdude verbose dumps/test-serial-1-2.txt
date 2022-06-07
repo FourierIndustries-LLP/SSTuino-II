@@ -1,0 +1,1470 @@
+$ arduino-cli compile --upload -p $DEVICE --fqbn "MegaCoreX:megaavr:4809:pinout=uno-wifi" --build-property clock=internal_16MHz --build-property bootloader=no_bootloader --build-property BOD=2v6 SerialNINAPassthrough
+
+Sketch uses 3428 bytes (6%) of program storage space. Maximum is 49152 bytes.
+Global variables use 323 bytes (5%) of dynamic memory, leaving 5821 bytes for local variables. Maximum is 6144 bytes.
+"/Users/panziyue/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino18/bin/avrdude" "-C/Users/panziyue/Library/Arduino15/packages/MegaCoreX/hardware/megaavr/1.0.8/avrdude.conf" -v -V -patmega4809 -cjtag2updi -P/dev/cu.usbmodem14101 -e "-Uflash:w:/private/var/folders/dx/mwn31wlj3db_q1112jfbg5qc0000gn/T/arduino-sketch-04E22168BB4D031D6D209DA77BD741B7/SerialNINAPassthrough.ino.hex:i" "-Ufuse0:w:0x00:m" "-Ufuse1:w:0x54:m" "-Ufuse2:w:0x01:m" "-Ufuse4:w:0x00:m" "-Ufuse5:w:0xC9:m" "-Ufuse6:w:0x06:m" "-Ufuse7:w:0x00:m" "-Ufuse8:w:0x00:m" "-Ulock:w:0xC5:m" -vvvv
+
+avrdude: Version 6.3-20201216
+         Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+         Copyright (c) 2007-2014 Joerg Wunsch
+
+         System wide configuration file is "/Users/panziyue/Library/Arduino15/packages/MegaCoreX/hardware/megaavr/1.0.8/avrdude.conf"
+         User configuration file is "/Users/panziyue/.avrduderc"
+         User configuration file does not exist or is not a regular file, skipping
+
+         Using Port                    : /dev/cu.usbmodem14101
+         Using Programmer              : jtag2updi
+avrdude: jtagmkII_open_pdi()
+avrdude: jtagmkII_getsync()
+avrdude: jtagmkII_getsync(): Sending sign-on command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] . [00] . [00] . [01] . [00] . [00] . [00] . [0e] . [01] . [f3] . [97] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [1d] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [86] . [01] . [01] . [07] . [01] . [01] . [01] . [07] . [06] . [01] . [00] . [00] . [00] . [00] . [00] . [00] J [4a] T [54] A [41] G [47] I [49] C [43] E [45]   [20] m [6d] k [6b] I [49] I [49] . [00] 
+avrdude: Recv: o [6f] 
+avrdude: Recv: V [56] 
+
+avrdude: jtagmkII_recv(): Got message seqno 0 (command_sequence == 0)
+avrdude: Recv: . [86] . [01] . [01] . [07] . [01] . [01] . [01] . [07] . [06] . [01] . [00] . [00] . [00] . [00] . [00] . [00] J [4a] T [54] A [41] G [47] I [49] C [43] E [45]   [20] m [6d] k [6b] I [49] I [49] . [00] 
+
+Raw message:
+0x86 0x01 0x01 0x07 0x01 0x01 0x01 0x07 0x06 0x01 0x00 0x00 0x00 0x00 0x00 0x00
+0x4a 0x54 0x41 0x47 0x49 0x43 0x45 0x20 0x6d 0x6b 0x49 0x49 0x00 
+Sign-on succeeded
+
+JTAG ICE mkII sign-on message:
+Communications protocol version: 1
+M_MCU:
+  boot-loader FW version:        1
+  firmware version:              1.07
+  hardware version:              1
+S_MCU:
+  boot-loader FW version:        1
+  firmware version:              6.07
+  hardware version:              1
+Serial number:                   00:00:00:00:00:00
+Device ID:                       JTAGICE mkII
+avrdude: jtagmkII_getsync(): Using a 298-byte device descriptor
+avrdude: jtagmkII_setparm()
+avrdude: jtagmkII_setparm(): Sending set parameter command (parm 0x03, 1 bytes): 
+avrdude: jtagmkII_send(): sending 3 bytes
+avrdude: Send: . [1b] . [01] . [00] . [03] . [00] . [00] . [00] . [0e] . [02] . [03] . [06] $ [24] 1 [31] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [cd] 
+avrdude: Recv: . [83] 
+
+avrdude: jtagmkII_recv(): Got message seqno 1 (command_sequence == 1)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_getsync(): Sending get sync command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] . [02] . [00] . [01] . [00] . [00] . [00] . [0e] . [0f] . [e2] u [75] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [02] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [1d] 
+avrdude: Recv: . [09] 
+
+avrdude: jtagmkII_recv(): Got message seqno 2 (command_sequence == 2)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+         AVR Part                      : ATmega4809
+         Chip Erase delay              : 0 us
+         PAGEL                         : P00
+         BS2                           : P00
+         RESET disposition             : dedicated
+         RETRY pulse                   : SCK
+         serial program mode           : yes
+         parallel program mode         : yes
+         Timeout                       : 0
+         StabDelay                     : 0
+         CmdexeDelay                   : 0
+         SyncLoops                     : 0
+         ByteDelay                     : 0
+         PollIndex                     : 0
+         PollValue                     : 0x00
+         Memory Detail                 :
+
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           prodsig        0     0     0    0 no         61   61      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuses          0     0     0    0 no          9    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse0          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse1          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse2          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse4          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse5          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse6          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse7          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           fuse8          0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           lock           0     0     0    0 no          1    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           data           0     0     0    0 no          0    0      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           usersig        0     0     0    0 no         64   64      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           flash          0     0     0    0 no      49152  128      0     0     0 0x00 0x00
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           eeprom         0     0     0    0 no        256   64      0     0     0 0x00 0x00
+
+         Programmer Type : JTAGMKII_PDI
+         Description     : JTAGv2 to UPDI bridge
+avrdude: jtagmkII_getparm()
+avrdude: jtagmkII_getparm(): Sending get parameter command (parm 0x01): 
+avrdude: jtagmkII_send(): sending 2 bytes
+avrdude: Send: . [1b] . [03] . [00] . [02] . [00] . [00] . [00] . [0e] . [03] . [01] . [d3] . [99] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [03] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [03] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [81] . [01] . [01] 
+avrdude: Recv: . [ed] 
+avrdude: Recv: . [cd] 
+
+avrdude: jtagmkII_recv(): Got message seqno 3 (command_sequence == 3)
+avrdude: Recv: . [81] . [01] . [01] 
+
+Raw message:
+0x81 0x01 0x01 
+parameter values:
+0x01  0x01  
+
+avrdude: jtagmkII_getparm()
+avrdude: jtagmkII_getparm(): Sending get parameter command (parm 0x02): 
+avrdude: jtagmkII_send(): sending 2 bytes
+avrdude: Send: . [1b] . [04] . [00] . [02] . [00] . [00] . [00] . [0e] . [03] . [02] . [aa] B [42] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [04] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [05] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [81] . [07] . [01] . [07] . [06] 
+avrdude: Recv: . [e6] 
+avrdude: Recv: M [4d] 
+
+avrdude: jtagmkII_recv(): Got message seqno 4 (command_sequence == 4)
+avrdude: Recv: . [81] . [07] . [01] . [07] . [06] 
+
+Raw message:
+0x81 0x07 0x01 0x07 0x06 
+parameter values:
+0x07  0x01  0x07  0x06  
+
+         M_MCU hardware version: 1
+         M_MCU firmware version: 1.07
+         S_MCU hardware version: 1
+         S_MCU firmware version: 6.07
+         Serial number:          00:00:00:00:00:00
+avrdude: jtagmkII_getparm()
+avrdude: jtagmkII_getparm(): Sending get parameter command (parm 0x06): 
+avrdude: jtagmkII_send(): sending 2 bytes
+avrdude: Send: . [1b] . [05] . [00] . [02] . [00] . [00] . [00] . [0e] . [03] . [06] s [73] I [49] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [05] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [03] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [81] . [88] . [13] 
+avrdude: Recv: x [78] 
+avrdude: Recv: M [4d] 
+
+avrdude: jtagmkII_recv(): Got message seqno 5 (command_sequence == 5)
+avrdude: Recv: . [81] . [88] . [13] 
+
+Raw message:
+0x81 0x88 0x13 
+parameter values:
+0x88  0x13  
+
+         Vtarget         : 5.0 V
+avrdude: jtagmkII_initialize(): trying to set baudrate to 115200
+avrdude: jtagmkII_setparm()
+avrdude: jtagmkII_setparm(): Sending set parameter command (parm 0x05, 1 bytes): 
+avrdude: jtagmkII_send(): sending 3 bytes
+avrdude: Send: . [1b] . [06] . [00] . [03] . [00] . [00] . [00] . [0e] . [02] . [05] . [07] . [88] . [b0] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [06] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [c3] 
+avrdude: Recv: . [1f] 
+
+avrdude: jtagmkII_recv(): Got message seqno 6 (command_sequence == 6)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_set_devdescr(): Sending set device descriptor command: 
+avrdude: jtagmkII_send(): sending 299 bytes
+avrdude: Send: . [1b] . [07] . [00] + [2b] . [01] . [00] . [00] . [0e] . [0c] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [80] . [00] @ [40] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [c0] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [80] . [01] . [00] . [00] . [00] . [00] . [00] . [01] . [02] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [e8] . [c8] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [07] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: | [7c] 
+avrdude: Recv: . [9e] 
+
+avrdude: jtagmkII_recv(): Got message seqno 7 (command_sequence == 7)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_initialize(): Cannot locate "flash" and "boot" memories in description
+avrdude: jtagmkII_reset(): Sending reset command: 
+avrdude: jtagmkII_send(): sending 2 bytes
+avrdude: Send: . [1b] . [08] . [00] . [02] . [00] . [00] . [00] . [0e] . [0b] . [01] . [de] . [fe] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [08] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [ce] 
+avrdude: Recv: / [2f] 
+
+avrdude: jtagmkII_recv(): Got message seqno 8 (command_sequence == 8)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_read_byte(.., signature, 0x0, ...)
+avrdude: jtagmkII_program_enable(): Sending enter progmode command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] . [09] . [00] . [01] . [00] . [00] . [00] . [0e] . [14] . [dc] | [7c] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [09] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: q [71] 
+avrdude: Recv: . [ae] 
+
+avrdude: jtagmkII_recv(): Got message seqno 9 (command_sequence == 9)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_program_enable(): Sending enter progmode command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] . [0a] . [00] . [01] . [00] . [00] . [00] . [0e] . [14] . [0c] . [f6] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [0a] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [a1] 
+avrdude: Recv: $ [24] 
+
+avrdude: jtagmkII_recv(): Got message seqno 10 (command_sequence == 10)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_read_byte(): Sending read memory command: 
+avrdude: jtagmkII_send(): sending 10 bytes
+avrdude: Send: . [1b] . [0b] . [00] . [0a] . [00] . [00] . [00] . [0e] . [05] . [b4] . [01] . [00] . [00] . [00] . [00] . [11] . [00] . [00] . [1a] . [d4] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [0b] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [02] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [82] . [1e] 
+avrdude: Recv: { [7b] 
+avrdude: Recv: . [9b] 
+
+avrdude: jtagmkII_recv(): Got message seqno 11 (command_sequence == 11)
+avrdude: Recv: . [82] . [1e] 
+
+Raw message:
+0x82 0x1e 
+memory contents:
+0x1e  
+
+avrdude: jtagmkII_read_byte(.., signature, 0x1, ...)
+avrdude: jtagmkII_read_byte(): Sending read memory command: 
+avrdude: jtagmkII_send(): sending 10 bytes
+avrdude: Send: . [1b] . [0c] . [00] . [0a] . [00] . [00] . [00] . [0e] . [05] . [b4] . [01] . [00] . [00] . [00] . [01] . [11] . [00] . [00] . [8c] . [b8] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [0c] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [02] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [82] . [96] 
+avrdude: Recv: . [d9] 
+avrdude: Recv: z [7a] 
+
+avrdude: jtagmkII_recv(): Got message seqno 12 (command_sequence == 12)
+avrdude: Recv: . [82] . [96] 
+
+Raw message:
+0x82 0x96 
+memory contents:
+0x96  
+
+avrdude: jtagmkII_read_byte(.., signature, 0x2, ...)
+avrdude: jtagmkII_read_byte(): Sending read memory command: 
+avrdude: jtagmkII_send(): sending 10 bytes
+avrdude: Send: . [1b] . [0d] . [00] . [0a] . [00] . [00] . [00] . [0e] . [05] . [b4] . [01] . [00] . [00] . [00] . [02] . [11] . [00] . [00] N [4e] . [8d] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [0d] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [02] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [82] Q [51] 
+avrdude: Recv: . [97] 
+avrdude: Recv: . [85] 
+
+avrdude: jtagmkII_recv(): Got message seqno 13 (command_sequence == 13)
+avrdude: Recv: . [82] Q [51] 
+
+Raw message:
+0x82 0x51 
+memory contents:
+0x51  
+
+avrdude: jtagmkII_chip_erase(): Sending Xmega chip erase command: 
+avrdude: jtagmkII_send(): sending 6 bytes
+avrdude: Send: . [1b] . [0e] . [00] . [06] . [00] . [00] . [00] . [0e] 4 [34] . [00] . [00] . [00] . [00] . [00] . [b3] x [78] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [7f] 
+avrdude: Recv: 2 [32] 
+
+avrdude: jtagmkII_recv(): Got message seqno 14 (command_sequence == 14)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 0 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [0f] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] @ [40] . [00] . [00] . [0c] . [94] Q [51] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] . [d0] . [03] . [0c] . [94] . [aa] . [03] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [d7] l [6c] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [0f] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [c0] 
+avrdude: Recv: . [b3] 
+
+avrdude: jtagmkII_recv(): Got message seqno 15 (command_sequence == 15)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 128 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [10] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] @ [40] . [00] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] n [6e] . [00] . [0c] . [94] B [42] . [04] . [0c] . [94] . [1c] . [04] . [0c] . [94] . [f6] . [03] . [0c] . [94] n [6e] . [00] j [6a] . [04] . [11] $ [24] . [1f] . [be] . [cf] . [ef] . [cd] . [bf] . [df] . [e3] . [de] . [bf] ) [29] . [e2] . [a0] . [e0] . [b8] . [e2] . [01] . [c0] . [1d] . [92] . [a3] 4 [34] . [b2] . [07] . [e1] . [f7] . [10] . [e0] . [c1] . [e5] . [d0] . [e0] . [04] . [c0] ! [21] . [97] . [fe] . [01] . [0e] . [94] : [3a] . [06] . [c0] 5 [35] . [d1] . [07] . [c9] . [f7] . [0e] . [94] . [b5] . [04] . [0c] . [94] O [4f] . [06] . [0c] . [94] . [00] . [00] ( [28] / [2f] 0 [30] . [e0] . [f9] . [01] . [e3] ^ [5e] . [f2] K [4b] P [50] . [81] _ [5f] ? [3f] . [09] . [f4] J [4a] . [c0] . [89] 2 [32] X [58] . [f4] . [f9] . [01] . [ee] U [55] . [f3] K [4b] . [e0] . [81] . [ee] # [23] . [de] . [e7] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [10] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [0a] 
+avrdude: Recv: Y [59] 
+
+avrdude: jtagmkII_recv(): Got message seqno 16 (command_sequence == 16)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 256 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [11] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] A [41] . [00] . [00] ) [29] . [f0] . [e1] 0 [30] . [89] . [f0] . [10] . [f0] . [e6] 0 [30] . [10] . [f1] . [f9] . [01] . [ec] P [50] . [f3] K [4b] . [e0] . [81] . [a0] . [e2] . [ea] . [9f] . [f0] . [01] . [11] $ [24] . [fc] _ [5f] . [80] . [81] . [85] # [23] . [01] . [f1] U [55] . [83] . [08] . [95] . [f9] . [01] . [e5] S [53] . [f3] K [4b] @ [40] . [81] C [43] 0 [30] . [08] . [f0] O [4f] _ [5f] ` [60] . [91] . [01] . [0a] . [81] . [e0] . [90] . [e0] . [01] . [c0] . [88] . [0f] J [4a] . [95] . [ea] . [f7] . [80] . [95] . [86] # [23] . [80] . [93] . [01] . [0a] . [de] . [cf] . [80] . [e1] . [e8] . [9f] . [f0] . [01] . [11] $ [24] . [e0] Z [5a] . [f5] O [4f] . [81] . [81] . [8f] ~ [7e] . [81] . [83] . [d4] . [cf] % [25] S [53] 3 [33] K [4b] . [d9] . [01] . [8c] . [91] 0 [30] . [97] a [61] . [f0] . [8f] ? [3f] Q [51] . [f0] p [70] . [96] . [e8] . [0f] . [f1] . [1d] . [9f] . [b7] . [f8] . [94] . [80] . [81] 6 [36] . [a2] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [11] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [b5] 
+avrdude: Recv: . [d8] 
+
+avrdude: jtagmkII_recv(): Got message seqno 17 (command_sequence == 17)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 384 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [12] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] A [41] . [00] . [00] . [88] ` [60] . [80] . [83] . [9f] . [bf] . [08] . [95] . [f0] . [e0] . [e0] . [e0] . [f6] . [cf] . [af] . [92] . [bf] . [92] . [cf] . [92] . [df] . [92] . [ef] . [92] . [ff] . [92] . [0f] . [93] . [1f] . [93] . [cf] . [93] . [df] . [93] l [6c] . [01] { [7b] . [01] . [8b] . [01] . [04] . [0f] . [15] . [1f] . [eb] . [01] ^ [5e] . [01] . [ae] . [18] . [bf] . [08] . [c0] . [17] . [d1] . [07] Y [59] . [f0] i [69] . [91] . [d6] . [01] . [ed] . [91] . [fc] . [91] . [01] . [90] . [f0] . [81] . [e0] - [2d] . [c6] . [01] . [09] . [95] . [89] + [2b] y [79] . [f7] . [c5] . [01] . [df] . [91] . [cf] . [91] . [1f] . [91] . [0f] . [91] . [ff] . [90] . [ef] . [90] . [df] . [90] . [cf] . [90] . [bf] . [90] . [af] . [90] . [08] . [95] . [fc] . [01] . [a4] . [85] . [b5] . [85] . [11] . [96] . [8c] . [91] . [11] . [97] . [81] . [fd] . [0f] . [c0] . [9c] . [91] . [86] . [89] . [8f] _ [5f] . [8f] s [73] . [d1] . [91] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [12] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: e [65] 
+avrdude: Recv: R [52] 
+
+avrdude: jtagmkII_recv(): Got message seqno 18 (command_sequence == 18)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 512 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [13] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] B [42] . [00] . [00] ' [27] . [89] ( [28] . [17] I [49] . [f0] . [a6] . [89] . [ae] . [0f] . [bf] / [2f] . [b1] . [1d] ] [5d] . [96] . [9c] . [93] . [86] . [8b] . [08] . [95] . [8c] . [91] . [08] . [95] . [fc] . [01] P [50] . [8d] A [41] . [8d] % [25] / [2f] 0 [30] . [e0] . [84] / [2f] . [90] . [e0] . [82] . [1b] . [93] . [0b] T [54] . [17] . [10] . [f0] . [cf] . [96] . [08] . [95] . [01] . [97] . [08] . [95] . [fc] . [01] . [96] . [89] . [87] . [89] . [98] . [17] a [61] . [f0] . [a7] . [89] . [ae] . [0f] . [bf] / [2f] . [b1] . [1d] ] [5d] . [96] . [8c] . [91] . [97] . [89] . [9f] _ [5f] . [9f] s [73] . [97] . [8b] . [90] . [e0] . [08] . [95] . [8f] . [ef] . [9f] . [ef] . [08] . [95] . [fc] . [01] . [96] . [89] . [87] . [89] . [98] . [17] 1 [31] . [f0] . [87] . [89] . [e8] . [0f] . [f1] . [1d] . [85] . [8d] . [90] . [e0] . [08] . [95] . [8f] . [ef] . [9f] . [ef] . [08] . [95] . [fc] . [01] . [96] . [89] . [11] 2 [32] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [13] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [da] 
+avrdude: Recv: . [d3] 
+
+avrdude: jtagmkII_recv(): Got message seqno 19 (command_sequence == 19)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 640 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [14] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] B [42] . [00] . [00] ' [27] . [89] . [89] / [2f] . [90] . [e0] . [80] \ [5c] . [9f] O [4f] . [82] . [1b] . [91] . [09] . [8f] s [73] . [99] ' [27] . [08] . [95] . [89] . [e0] . [98] . [e2] . [0e] . [94] > [3e] . [01] ! [21] . [e0] . [89] + [2b] . [09] . [f4]   [20] . [e0] . [82] / [2f] . [08] . [95] . [86] . [ea] . [98] . [e2] . [0e] . [94] > [3e] . [01] ! [21] . [e0] . [89] + [2b] . [09] . [f4]   [20] . [e0] . [82] / [2f] . [08] . [95] . [cf] . [93] . [df] . [93] . [ec] . [01] . [e8] . [81] . [f9] . [81] . [06] . [80] . [f7] . [81] . [e0] - [2d] . [09] . [95] . [ec] . [85] . [fd] . [85] . [86] . [81] . [8f] s [73] . [86] . [83] . [ec] . [85] . [fd] . [85] . [85] . [81] . [8f] u [75] . [85] . [83] . [8f] . [89] . [8e] . [8b] . [1d] . [8a] . [df] . [91] . [cf] . [91] . [08] . [95] . [fc] . [01] a [61] 0 [30] . [19] . [f4] d [64] . [8b] . [81] . [e0] . [08] . [95] . [14] . [8a] f [66] # [23] . [d9] . [f3] . [80] . [f2] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [14] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [d4] 
+avrdude: Recv: O [4f] 
+
+avrdude: jtagmkII_recv(): Got message seqno 20 (command_sequence == 20)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 768 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [15] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] C [43] . [00] . [00] . [80] . [e0] . [08] . [95] . [dc] . [01] T [54] . [96] . [1c] . [92] T [54] . [97] T [54] . [96] . [8c] . [91] T [54] . [97] . [82] 0 [30] . [a0] . [f4] ( [28] / [2f] 0 [30] . [e0] . [f9] . [01] . [ee] . [0f] . [ff] . [1f] . [e2] . [0f] . [f3] . [1f] . [ea] . [0f] . [fb] . [1f] . [97] . [85] . [96] . [13] . [03] . [c0] . [96] . [85] . [94] . [17] I [49] . [f0] . [8f] _ [5f] T [54] . [96] . [8c] . [93] T [54] . [97] . [e7] . [cf] T [54] . [96] . [1c] . [92] . [80] . [e0] . [08] . [95] . [81] . [e0] . [08] . [95] . [cf] . [93] . [df] . [93] . [fc] . [01] . [90] . [8d] . [81] . [8d] . [c4] . [85] . [d5] . [85] . [98] . [13] . [06] . [c0] . [8d] . [81] . [8f] } [7d] . [8d] . [83] . [df] . [91] . [cf] . [91] . [08] . [95] . [a1] . [8d] . [ae] . [0f] . [bf] / [2f] . [b1] . [1d] . [a3] Z [5a] . [bf] O [4f] , [2c] . [91] . [81] . [8d] . [90] . [e0] . [01] . [96] . [8f] s [73] . [99] ' [27] . [c9] . [fd] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [15] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: k [6b] 
+avrdude: Recv: . [ce] 
+
+avrdude: jtagmkII_recv(): Got message seqno 21 (command_sequence == 21)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 896 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [16] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] C [43] . [00] . [00] . [81] . [8f] . [80] . [e4] . [8c] . [83] . [a4] . [85] . [b5] . [85] . [12] . [96] , [2c] . [93] . [90] . [8d] . [81] . [8d] . [98] . [13] . [e6] . [cf] . [a4] . [85] . [b5] . [85] . [15] . [96] . [8c] . [91] . [15] . [97] . [8f] } [7d] . [15] . [96] . [8c] . [93] . [83] . [8d] . [88] # [23] . [d9] . [f2] . [84] . [8d] . [80] . [93] . [13] . [01] . [13] . [8e] . [d6] . [cf] . [dc] . [01] . [1c] . [96] . [ed] . [91] . [fc] . [91] . [0f] . [b6] . [07] . [fe] . [03] . [c0] % [25] . [81] % [25] . [fd] . [04] . [c0] $ [24] . [81] % [25] . [fd] . [0c] . [94] . [a5] . [01] . [08] . [95] . [ef] . [92] . [ff] . [92] . [0f] . [93] . [1f] . [93] . [cf] . [93] . [df] . [93] . [ec] . [01] . [81] . [e0] . [8d] . [8b] . [98] . [8d] . [89] . [8d] . [98] . [13] . [1c] . [c0] . [ac] . [85] . [bd] . [85] . [14] . [96] . [8c] . [91] . [14] . [97] . [85] . [ff] . [15] . [c0] . [12] . [96] l [6c] . [93] d [64] B [42] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [16] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [bb] 
+avrdude: Recv: D [44] 
+
+avrdude: jtagmkII_recv(): Got message seqno 22 (command_sequence == 22)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1024 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [17] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] D [44] . [00] . [00] . [ac] . [85] . [bd] . [85] . [80] . [e4] . [14] . [96] . [8c] . [93] . [ec] . [85] . [fd] . [85] . [85] . [81] . [8f] } [7d] . [85] . [83] . [81] . [e0] . [90] . [e0] . [df] . [91] . [cf] . [91] . [1f] . [91] . [0f] . [91] . [ff] . [90] . [ef] . [90] . [08] . [95] . [80] . [91] . [11] . [01] . [80] . [ff] . [08] . [c0] . [80] . [91] . [13] . [01] . [8c] . [8f] . [8a] . [8d] . [80] . [93] . [13] . [01] . [81] . [e0] . [8b] . [8f] . [f6] . [2e] . [08] . [8d] . [10] . [e0] . [0f] _ [5f] . [1f] O [4f] . [0f] s [73] . [11] ' [27] . [e0] . [2e] . [89] . [8d] . [8e] . [11] . [04] . [c0] . [ce] . [01] . [0e] . [94] . [db] . [01] . [f9] . [cf] . [e8] . [8d] . [ec] . [0f] . [fd] / [2f] . [f1] . [1d] . [e3] Z [5a] . [ff] O [4f] . [f0] . [82] . [08] . [8f] . [ec] . [85] . [fd] . [85] . [85] . [81] . [80] b [62] . [ce] . [cf] . [cf] . [93] . [df] . [93] . [fc] . [01] % [25] . [89] " [22] # [23] . [da] . [0e] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [17] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [04] 
+avrdude: Recv: . [c5] 
+
+avrdude: jtagmkII_recv(): Got message seqno 23 (command_sequence == 23)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1152 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [18] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] D [44] . [00] . [00] . [c9] . [f0] . [ec] . [01] . [80] . [91] . [11] . [01] . [80] . [ff] . [08] . [c0] . [80] . [91] . [13] . [01] . [84] . [8f] . [82] . [8d] . [80] . [93] . [13] . [01] . [81] . [e0] . [83] . [8f] . [ec] . [85] . [fd] . [85] . [85] . [81] . [85] . [fd] . [03] . [c0] . [84] . [81] . [86] . [fd] . [04] . [c0] . [ce] . [01] . [0e] . [94] . [db] . [01] . [f4] . [cf] . [df] . [91] . [cf] . [91] . [08] . [95] . [80] . [e0] . [90] . [e0] . [89] + [2b] ) [29] . [f0] . [0e] . [94] T [54] . [01] . [81] . [11] . [0e] . [94] . [00] . [00] . [80] . [e0] . [90] . [e0] . [89] + [2b] ) [29] . [f0] . [0e] . [94] J [4a] . [01] . [81] . [11] . [0e] . [94] . [00] . [00] . [80] . [e0] . [90] . [e0] . [89] + [2b] I [49] . [f0] . [80] . [e0] . [90] . [e0] . [89] + [2b] ) [29] . [f0] . [0e] . [94] . [00] . [00] . [81] . [11] . [0e] . [94] . [00] . [00] . [80] . [e0] . [90] . [e0] . [89] + [2b] I [49] . [f0] . [b5] % [25] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [18] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [b6] 
+avrdude: Recv: t [74] 
+
+avrdude: jtagmkII_recv(): Got message seqno 24 (command_sequence == 24)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1280 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [19] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] E [45] . [00] . [00] . [80] . [e0] . [90] . [e0] . [89] + [2b] ) [29] . [f0] . [0e] . [94] . [00] . [00] . [81] . [11] . [0c] . [94] . [00] . [00] . [08] . [95] . [81] . [e0] . [08] . [95] . [cf] . [93] . [df] . [93] . [90] . [e0] . [fc] . [01] . [e3] ^ [5e] . [f2] K [4b]   [20] . [81] / [2f] ? [3f] a [61] . [f0] . [fc] . [01] . [ec] P [50] . [f3] K [4b] . [e0] . [81] 0 [30] . [e2] . [e3] . [9f] . [f0] . [01] . [11] $ [24] . [fc] _ [5f] a [61] 0 [30] ! [21] . [f4] ! [21] . [83] . [df] . [91] . [cf] . [91] . [08] . [95] . [85] S [53] . [93] K [4b] . [ec] . [01] . [a8] . [81] . [af] ? [3f] i [69] . [f0] . [cf] . [01] @ [40] . [96] . [a8] . [0f] . [b9] / [2f] . [b1] . [1d] . [9f] . [b7] . [f8] . [94] " [22] . [83] . [8c] . [91] . [88] ` [60] . [8c] . [93] . [9f] . [bf] . [ea] . [cf] . [b0] . [e0] . [a0] . [e0] . [f5] . [cf] . [af] . [92] . [bf] . [92] . [cf] . [92] . [df] . [92] . [ef] . [92] . [ff] . [92] u [75] ! [21] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [19] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [09] 
+avrdude: Recv: . [f5] 
+
+avrdude: jtagmkII_recv(): Got message seqno 25 (command_sequence == 25)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1408 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [1a] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] E [45] . [00] . [00] . [0f] . [93] . [1f] . [93] . [cf] . [93] . [df] . [93] . [ec] . [01] j [6a] . [01] { [7b] . [01] . [a2] . [2e] . [8d] . [89] . [88] # [23] 9 [39] . [f0] . [e8] . [81] . [f9] . [81] . [06] . [88] . [f7] . [89] . [e0] - [2d] . [ce] . [01] . [09] . [95] . [0c] . [89] . [10] . [e0] . [bf] . [b6] . [f8] . [94] ` [60] . [e0] p [70] . [e2] . [81] . [ea] . [97] . [e0] . [a7] . [01] . [96] . [01] . [0e] . [94] . [e6] . [05] i [69] . [01] z [7a] . [01] . [8f] . [ef] . [c8] . [1a] . [d8] . [0a] . [e8] . [0a] . [f8] . [0a] . [f6] . [94] . [e7] . [94] . [d7] . [94] . [c7] . [94] . [ec] . [85] . [fd] . [85] . [86] . [81] . [8d] . [7f] . [86] . [83] . [ec] . [85] . [fd] . [85] . [86] . [81] . [86] . [83] . [1d] . [8a] . [a0] . [91] # [23] . [11] . [0a] . [2e] . [00] . [0c] . [bb] . [0b] . [a7] . [01] . [96] . [01] . [0e] . [94] 2 [32] . [06]   [20] . [e0] 4 [34] . [e0] @ [40] . [e0] P [50] . [e0] . [b5] m [6d] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [1a] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [d9] 
+avrdude: Recv: . [7f] 
+
+avrdude: jtagmkII_recv(): Got message seqno 26 (command_sequence == 26)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1536 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [1b] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] F [46] . [00] . [00] . [0e] . [94] . [08] . [06] . [ec] . [85] . [fd] . [85] . [c2] . [0e] . [d3] . [1e] . [e4] . [1e] . [f5] . [1e] . [c0] . [86] . [d1] . [86] . [ec] . [85] . [fd] . [85] . [a7] . [82] . [ec] . [85] . [fd] . [85] . [86] . [81] . [80] l [6c] . [86] . [83] . [ec] . [85] . [fd] . [85] . [85] . [81] . [80] h [68] . [85] . [83] . [90] . [91] . [e2] . [05] . [8b] . [89] . [80] . [95] . [89] # [23] x [78] . [01] . [ee] . [0c] . [ff] . [1c] . [f7] . [01] . [e0] . [0f] . [f1] . [1f] . [ec] . [0f] . [fd] . [1f] . [90] . [89] . [89] + [2b] . [80] . [93] . [e2] . [05] . [86] . [85] . [89] 2 [32] . [18] . [f4] b [62] . [e0] . [0e] . [94] . [8c] . [02] . [f7] . [01] . [e0] . [0f] . [f1] . [1f] . [ec] . [0f] . [fd] . [1f] . [87] . [85] . [89] 2 [32] . [10] . [f4] . [0e] . [94] p [70] . [00] . [0e] . [0d] . [1f] . [1d] . [c0] . [0f] . [d1] . [1f] . [8f] . [85] . [89] 2 [32] . [18] . [f4] a [61] . [e0] . [1a] . [c0] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: f [66] 
+avrdude: Recv: . [fe] 
+
+avrdude: jtagmkII_recv(): Got message seqno 27 (command_sequence == 27)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1664 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [1c] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] F [46] . [00] . [00] . [0e] . [94] . [8c] . [02] . [bf] . [be] . [df] . [91] . [cf] . [91] . [1f] . [91] . [0f] . [91] . [ff] . [90] . [ef] . [90] . [df] . [90] . [cf] . [90] . [bf] . [90] . [af] . [90] . [08] . [95] . [8f] . [b7] . [f8] . [94]   [20] . [91] . [00] ( [28] 0 [30] . [91] . [01] ( [28] @ [40] . [91] . [02] ( [28] P [50] . [91] . [03] ( [28] . [e0] . [91] . [ba] . [0a] . [f0] . [91] . [bb] . [0a] . [90] . [91] . [b6] . [0a] . [90] . [ff] . [08] . [c0] / [2f] _ [5f] ? [3f] O [4f] O [4f] O [4f] _ [5f] O [4f] . [e0] . [91] . [ba] . [0a] . [f0] . [91] . [bb] . [0a] . [8f] . [bf] . [a8] . [ee] . [b3] . [e0] . [0e] . [94] ' [27] . [06] $ [24] . [e0] . [f6] . [95] . [e7] . [95] * [2a] . [95] . [e1] . [f7] n [6e] . [0f] . [7f] . [1f] . [81] . [1d] . [91] . [1d] . [08] . [95] . [cf] . [92] . [df] . [92] . [ef] . [92] . [ff] . [92] . [0e] . [94] N [4e] . [03] k [6b] . [01] | [7c] . [01]   [20] . [ea] . [a3] . [f5] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [1c] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: h [68] 
+avrdude: Recv: b [62] 
+
+avrdude: jtagmkII_recv(): Got message seqno 28 (command_sequence == 28)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1792 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [1d] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] G [47] . [00] . [00] . [c2] . [0e] & [26] . [e8] . [d2] . [1e] ! [21] . [e0] . [e2] . [1e] . [f1] . [1c] . [80] . [ea] . [c8] . [16] . [86] . [e8] . [d8] . [06] . [81] . [e0] . [e8] . [06] . [f1] . [04] 8 [38] . [f4] . [0e] . [94] N [4e] . [03] . [c6] . [16] . [d7] . [06] . [e8] . [06] . [f9] . [06] . [c8] . [f3] . [0e] . [94] N [4e] . [03] l [6c] . [15] } [7d] . [05] . [8e] . [05] . [9f] . [05] . [c8] . [f3] . [ff] . [90] . [ef] . [90] . [df] . [90] . [cf] . [90] . [08] . [95] . [dc] . [01] . [ed] . [91] . [fc] . [91] . [04] . [88] . [f5] . [89] . [e0] - [2d] # [23] . [e0] 0 [30] . [e0] . [09] . [94] . [1f] . [92] . [0f] . [92] . [0f] . [b6] . [0f] . [92] . [11] $ [24] / [2f] . [93] ? [3f] . [93] O [4f] . [93] _ [5f] . [93] o [6f] . [93] . [7f] . [93] . [8f] . [93] . [9f] . [93] . [af] . [93] . [bf] . [93] . [ef] . [93] . [ff] . [93] . [89] . [e0] . [98] . [e2] . [0e] . [94] . [a5] . [01] . [ff] . [91] q [71] Z [5a] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [1d] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [d7] 
+avrdude: Recv: . [e3] 
+
+avrdude: jtagmkII_recv(): Got message seqno 29 (command_sequence == 29)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 1920 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [1e] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] G [47] . [00] . [00] . [ef] . [91] . [bf] . [91] . [af] . [91] . [9f] . [91] . [8f] . [91] . [7f] . [91] o [6f] . [91] _ [5f] . [91] O [4f] . [91] ? [3f] . [91] / [2f] . [91] . [0f] . [90] . [0f] . [be] . [0f] . [90] . [1f] . [90] . [18] . [95] . [1f] . [92] . [0f] . [92] . [0f] . [b6] . [0f] . [92] . [11] $ [24] / [2f] . [93] ? [3f] . [93] O [4f] . [93] _ [5f] . [93] o [6f] . [93] . [7f] . [93] . [8f] . [93] . [9f] . [93] . [af] . [93] . [bf] . [93] . [ef] . [93] . [ff] . [93] . [89] . [e0] . [98] . [e2] . [0e] . [94] . [f4] . [00] . [ff] . [91] . [ef] . [91] . [bf] . [91] . [af] . [91] . [9f] . [91] . [8f] . [91] . [7f] . [91] o [6f] . [91] _ [5f] . [91] O [4f] . [91] ? [3f] . [91] / [2f] . [91] . [0f] . [90] . [0f] . [be] . [0f] . [90] . [1f] . [90] . [18] . [95] . [1f] . [92] . [0f] . [92] . [0f] . [b6] . [0f] . [92] . [11] $ [24] / [2f] . [93] ? [3f] . [93] O [4f] . [93] _ [5f] . [93] o [6f] . [93] . [88] . [88] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [1e] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [07] 
+avrdude: Recv: i [69] 
+
+avrdude: jtagmkII_recv(): Got message seqno 30 (command_sequence == 30)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2048 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] . [1f] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] H [48] . [00] . [00] . [7f] . [93] . [8f] . [93] . [9f] . [93] . [af] . [93] . [bf] . [93] . [ef] . [93] . [ff] . [93] . [86] . [ea] . [98] . [e2] . [0e] . [94] . [a5] . [01] . [ff] . [91] . [ef] . [91] . [bf] . [91] . [af] . [91] . [9f] . [91] . [8f] . [91] . [7f] . [91] o [6f] . [91] _ [5f] . [91] O [4f] . [91] ? [3f] . [91] / [2f] . [91] . [0f] . [90] . [0f] . [be] . [0f] . [90] . [1f] . [90] . [18] . [95] . [1f] . [92] . [0f] . [92] . [0f] . [b6] . [0f] . [92] . [11] $ [24] / [2f] . [93] ? [3f] . [93] O [4f] . [93] _ [5f] . [93] o [6f] . [93] . [7f] . [93] . [8f] . [93] . [9f] . [93] . [af] . [93] . [bf] . [93] . [ef] . [93] . [ff] . [93] . [86] . [ea] . [98] . [e2] . [0e] . [94] . [f4] . [00] . [ff] . [91] . [ef] . [91] . [bf] . [91] . [af] . [91] . [9f] . [91] . [8f] . [91] . [7f] . [91] o [6f] . [91] _ [5f] . [91] O [4f] . [91] ? [3f] . [91] / [2f] . [91] . [0f] . [90] . [0f] . [be] . [0f] . [90] d [64] . [c5] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [1f] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [b8] 
+avrdude: Recv: . [e8] 
+
+avrdude: jtagmkII_recv(): Got message seqno 31 (command_sequence == 31)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2176 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b]   [20] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] H [48] . [00] . [00] . [1f] . [90] . [18] . [95] . [1f] . [92] . [0f] . [92] . [0f] . [b6] . [0f] . [92] . [11] $ [24] . [8f] . [93] . [9f] . [93] . [af] . [93] . [bf] . [93] . [80] . [91] . [00] ( [28] . [90] . [91] . [01] ( [28] . [a0] . [91] . [02] ( [28] . [b0] . [91] . [03] ( [28] . [01] . [96] . [a1] . [1d] . [b1] . [1d] . [80] . [93] . [00] ( [28] . [90] . [93] . [01] ( [28] . [a0] . [93] . [02] ( [28] . [b0] . [93] . [03] ( [28] . [81] . [e0] . [80] . [93] . [b6] . [0a] . [bf] . [91] . [af] . [91] . [9f] . [91] . [8f] . [91] . [0f] . [90] . [0f] . [be] . [0f] . [90] . [1f] . [90] . [18] . [95] . [e9] . [e0] . [f8] . [e2] . [12] . [82] . [13] . [82] H [48] . [ee] S [53] . [e0] ` [60] . [e0] p [70] . [e0] D [44] . [83] U [55] . [83] f [66] . [83] w [77] . [83] * [2a] . [e4] = [3d] . [e4]   [20] . [83] 1 [31] . [83] . [80] . [e2] . [98] . [e0] . [84] . [87] . [95] . [87] . [16] . [86] . [81] . [e0] . [99] . [a3] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv:   [20] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [82] 
+avrdude: Recv: . [b4] 
+
+avrdude: jtagmkII_recv(): Got message seqno 32 (command_sequence == 32)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2304 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] ! [21] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] I [49] . [00] . [00] . [87] . [87] . [84] . [e0] . [80] . [8b] . [81] . [e2] . [81] . [8b] . [80] . [e2] . [82] . [8b] . [13] . [8a] . [14] . [8a] . [15] . [8a] . [16] . [8a] . [17] . [8a] . [10] . [8e] . [11] . [8e] . [8b] . [e1] . [82] . [8f] . [13] . [8e] . [14] . [8e] . [e6] . [ea] . [f8] . [e2] . [12] . [82] . [13] . [82] D [44] . [83] U [55] . [83] f [66] . [83] w [77] . [83]   [20] . [83] 1 [31] . [83]   [20] . [e6] 8 [38] . [e0] $ [24] . [87] 5 [35] . [87] . [9a] . [e1] . [96] . [87] . [87] . [87] . [80] . [e4] . [80] . [8b] . [8a] . [e0] . [81] . [8b] . [89] . [e0] . [82] . [8b] . [13] . [8a] . [14] . [8a] . [15] . [8a] . [16] . [8a] . [17] . [8a] . [10] . [8e] . [11] . [8e] . [86] . [e2] . [82] . [8f] . [13] . [8e] . [14] . [8e] . [08] . [95] . [88] . [ed] . [90] . [e0] . [84] . [bf] . [90] . [93] a [61] . [00] . [80] . [91] . [02] . [06] . [86] ` [60] . [80] . [93] . [02] . [06] . [80] . [91] S [53] 4 [34] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: ! [21] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: = [3d] 
+avrdude: Recv: 5 [35] 
+
+avrdude: jtagmkII_recv(): Got message seqno 33 (command_sequence == 33)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2432 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] " [22] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] I [49] . [00] . [00] . [00] . [06] . [81] ` [60] . [80] . [93] . [00] . [06] . [80] . [91] . [02] . [06] . [8f] | [7c] . [80] e [65] . [80] . [93] . [02] . [06] . [10] . [92] . [e2] . [05] . [81] . [e0] . [80] . [93] . [e4] . [05] . [80] . [93] . [03] . [0a] . [8e] . [ef] . [80] . [93] ' [27] . [0a] . [80] . [93] & [26] . [0a] . [80] . [e8] . [80] . [93] - [2d] . [0a] . [80] . [93] + [2b] . [0a] . [80] . [93] ) [29] . [0a] . [80] . [93] , [2c] . [0a] . [80] . [93] * [2a] . [0a] . [80] . [93] ( [28] . [0a] . [8b] . [e0] . [80] . [93] . [00] . [0a] . [87] . [e0] . [80] . [93] . [e5] . [05] . [e0] . [e8] . [fa] . [e0] 7 [37] . [e0] . [2e] . [ef] . [90] . [e8] . [85] . [e0] 1 [31] . [83] $ [24] . [87] . [95] . [87] . [80] . [83] p [70] . [96] . [e0] < [3c] J [4a] . [e0] . [f4] . [07] . [b9] . [f7] . [10] . [92] . [b1] . [0a] . [8f] . [e7] . [9e] . [e3] . [80] . [93] . [bc] . [0a] . [90] . [93] . [bd] . [0a] X [58] . [a0] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: " [22] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [ed] 
+avrdude: Recv: . [bf] 
+
+avrdude: jtagmkII_recv(): Got message seqno 34 (command_sequence == 34)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2560 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] # [23] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] J [4a] . [00] . [00] . [80] . [91] . [b5] . [0a] . [81] ` [60] . [80] . [93] . [b5] . [0a] . [10] . [92] . [b0] . [0a] . [80] . [91] . [b0] . [0a] . [81] ` [60] . [80] . [93] . [b0] . [0a] x [78] . [94] a [61] . [e0] . [8c] . [e1] . [0e] . [94] . [8c] . [02] . [8c] . [e1] . [0e] . [94] p [70] . [00] a [61] . [e0] . [8d] . [e1] . [0e] . [94] . [8c] . [02] . [8d] . [e1] . [0e] . [94] p [70] . [00] a [61] . [e0] . [83] . [e2] . [0e] . [94] . [8c] . [02] . [83] . [e2] . [0e] . [94] p [70] . [00] a [61] . [e0] . [8e] . [e1] . [0e] . [94] . [8c] . [02] . [8e] . [e1] . [0e] . [94] p [70] . [00] @ [40] . [e0] R [52] . [ec] a [61] . [e0] p [70] . [e0] . [86] . [ea] . [98] . [e2] . [0e] . [94] . [a1] . [03] . [0e] . [94] w [77] . [03] @ [40] . [e0] R [52] . [ec] a [61] . [e0] p [70] . [e0] . [89] . [e0] . [98] . [e2] . [0e] . [94] . [a1] . [03] a [61] . [e0] . [83] . [e2] . [0e] . [94] . [8c] . [02] a [61] . [e0] . [b8] . [ef] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: # [23] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: R [52] 
+avrdude: Recv: > [3e] 
+
+avrdude: jtagmkII_recv(): Got message seqno 35 (command_sequence == 35)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2688 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] $ [24] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] J [4a] . [00] . [00] . [84] . [e0] . [0e] . [94] . [8c] . [02] a [61] . [e0] . [8d] . [e1] . [0e] . [94] . [8c] . [02] a [61] . [e0] . [89] . [e1] . [0e] . [94] . [8c] . [02] N [4e] . [98] n [6e] . [9a] N [4e] . [98] . [0f] . [98] . [0e] . [94] w [77] . [03] n [6e] . [98] . [0f] . [9a] . [c1] . [e0] . [d0] . [e4] . [10] . [92] . [08] ( [28] n [6e] . [98] . [86] . [ea] . [98] . [e2] . [0e] . [94] > [3e] . [01] . [89] + [2b] . [d1] . [f1] . [86] . [ea] . [98] . [e2] . [0e] . [94] . [1c] . [01] h [68] / [2f] . [89] . [e0] . [98] . [e2] . [0e] . [94] . [ea] . [01] / [2f] . [b7] . [f8] . [94] . [80] . [91] . [00] ( [28] . [90] . [91] . [01] ( [28] . [a0] . [91] . [02] ( [28] . [b0] . [91] . [03] ( [28] / [2f] . [bf] . [0a] . [96] . [a1] . [1d] . [b1] . [1d] @ [40] . [91] . [04] ( [28] P [50] . [91] . [05] ( [28] ` [60] . [91] . [06] ( [28] p [70] . [91] . [07] ( [28] H [48] . [17] Y [59] . [07] j [6a] . [07] . [16] q [71] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: $ [24] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: \ [5c] 
+avrdude: Recv: . [a2] 
+
+avrdude: jtagmkII_recv(): Got message seqno 36 (command_sequence == 36)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2816 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] % [25] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] K [4b] . [00] . [00] { [7b] . [07] . [b0] . [f6] . [c0] . [93] . [08] ( [28] / [2f] . [b7] . [f8] . [94] . [80] . [91] . [00] ( [28] . [90] . [91] . [01] ( [28] . [a0] . [91] . [02] ( [28] . [b0] . [91] . [03] ( [28] / [2f] . [bf] . [80] . [93] . [04] ( [28] . [90] . [93] . [05] ( [28] . [a0] . [93] . [06] ( [28] . [b0] . [93] . [07] ( [28] . [c0] . [cf] . [89] . [e0] . [98] . [e2] . [0e] . [94] > [3e] . [01] . [89] + [2b] . [d1] . [f1] . [89] . [e0] . [98] . [e2] . [0e] . [94] . [1c] . [01] h [68] / [2f] . [86] . [ea] . [98] . [e2] . [0e] . [94] . [ea] . [01] / [2f] . [b7] . [f8] . [94] . [80] . [91] . [00] ( [28] . [90] . [91] . [01] ( [28] . [a0] . [91] . [02] ( [28] . [b0] . [91] . [03] ( [28] / [2f] . [bf] . [0a] . [96] . [a1] . [1d] . [b1] . [1d] @ [40] . [91] . [04] ( [28] P [50] . [91] . [05] ( [28] ` [60] . [91] . [06] ( [28] p [70] . [91] . [07] ( [28] H [48] . [17] Y [59] . [07] j [6a] . [07] . [92] . [d9] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: % [25] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [e3] 
+avrdude: Recv: # [23] 
+
+avrdude: jtagmkII_recv(): Got message seqno 37 (command_sequence == 37)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 2944 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] & [26] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] K [4b] . [00] . [00] { [7b] . [07] . [b0] . [f6] . [c0] . [93] . [08] ( [28] / [2f] . [b7] . [f8] . [94] . [80] . [91] . [00] ( [28] . [90] . [91] . [01] ( [28] . [a0] . [91] . [02] ( [28] . [b0] . [91] . [03] ( [28] / [2f] . [bf] . [80] . [93] . [04] ( [28] . [90] . [93] . [05] ( [28] . [a0] . [93] . [06] ( [28] . [b0] . [93] . [07] ( [28] . [c0] . [cf] . [80] . [91] . [08] ( [28] . [81] 0 [30] ! [21] . [f4] n [6e] . [9a] . [0e] . [94] ] [5d] . [02] u [75] . [cf] . [81] . [11] . [02] . [c0] n [6e] . [98] . [f9] . [cf] . [de] . [b9] . [f7] . [cf] . [a1] . [e2] . [1a] . [2e] . [aa] . [1b] . [bb] . [1b] . [fd] . [01] . [0d] . [c0] . [aa] . [1f] . [bb] . [1f] . [ee] . [1f] . [ff] . [1f] . [a2] . [17] . [b3] . [07] . [e4] . [07] . [f5] . [07]   [20] . [f0] . [a2] . [1b] . [b3] . [0b] . [e4] . [0b] . [f5] . [0b] f [66] . [1f] w [77] . [1f] . [88] . [1f] . [99] . [1f] . [1a] . [94] i [69] . [f7] ` [60] . [95] . [f5] + [2b] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: & [26] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: 3 [33] 
+avrdude: Recv: . [a9] 
+
+avrdude: jtagmkII_recv(): Got message seqno 38 (command_sequence == 38)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 3072 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] ' [27] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] L [4c] . [00] . [00] p [70] . [95] . [80] . [95] . [90] . [95] . [9b] . [01] . [ac] . [01] . [bd] . [01] . [cf] . [01] . [08] . [95] . [05] . [2e] . [97] . [fb] . [1e] . [f4] . [00] . [94] . [0e] . [94] . [1f] . [06] W [57] . [fd] . [07] . [d0] . [0e] . [94] . [e6] . [05] . [07] . [fc] . [03] . [d0] N [4e] . [f4] . [0c] . [94] . [1f] . [06] P [50] . [95] @ [40] . [95] 0 [30] . [95] ! [21] . [95] ? [3f] O [4f] O [4f] O [4f] _ [5f] O [4f] . [08] . [95] . [90] . [95] . [80] . [95] p [70] . [95] a [61] . [95] . [7f] O [4f] . [8f] O [4f] . [9f] O [4f] . [08] . [95] . [0e] . [94] @ [40] . [06] . [a5] . [9f] . [90] . [0d] . [b4] . [9f] . [90] . [0d] . [a4] . [9f] . [80] . [0d] . [91] . [1d] . [11] $ [24] . [08] . [95] . [b7] . [ff] . [0c] . [94] ' [27] . [06] . [0e] . [94] ' [27] . [06] . [82] . [1b] . [93] . [0b] . [08] . [95] . [ee] . [0f] . [ff] . [1f] . [05] . [90] . [f4] . [91] . [e0] - [2d] . [09] . [94] . [12] F [46] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: ' [27] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [8c] 
+avrdude: Recv: ( [28] 
+
+avrdude: jtagmkII_recv(): Got message seqno 39 (command_sequence == 39)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 3200 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] ( [28] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [80] L [4c] . [00] . [00] . [a2] . [9f] . [b0] . [01] . [b3] . [9f] . [c0] . [01] . [a3] . [9f] p [70] . [0d] . [81] . [1d] . [11] $ [24] . [91] . [1d] . [b2] . [9f] p [70] . [0d] . [81] . [1d] . [11] $ [24] . [91] . [1d] . [08] . [95] . [f8] . [94] . [ff] . [cf] . [00] . [00] . [00] . [03] . [00] . [01] . [02] . [00] . [00] . [01] . [01] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [04] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [00] . [05] . [04] . [00] . [05] . [06] . [02] . [04] . [01] . [03] . [00] . [01] . [00] . [01] . [02] . [00] . [01] . [02] . [03] . [04] . [05] . [02] . [03] . [03] . [05] . [04] . [06] . [05] . [04] . [06] . [07] . [03] . [07] . [00] . [01] . [02] . [02] . [03] . [00] . [01] . [07] . [06] . [02] . [02] . [00] . [05] . [02] . [01] . [05] . [00] . [04] . [01] . [01] . [04] . [13] + [2b] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: ( [28] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: > [3e] 
+avrdude: Recv: . [99] 
+
+avrdude: jtagmkII_recv(): Got message seqno 40 (command_sequence == 40)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_paged_write(.., flash, 128, 128)
+avrdude: jtagmkII_paged_write(): block_size at addr 3328 is 128
+avrdude: jtagmkII_paged_write(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 138 bytes
+avrdude: Send: . [1b] ) [29] . [00] . [8a] . [00] . [00] . [00] . [0e] . [04] . [c0] . [80] . [00] . [00] . [00] . [00] M [4d] . [00] . [00] . [04] . [04] . [03] . [03] . [03] . [03] . [03] . [03] . [00] . [00] . [02] . [00] . [00] . [03] . [01] . [01] . [00] . [00] . [01] . [02] . [02] . [02] . [02] . [05] . [05] . [05] . [05] . [03] . [05]   [20] . [10] . [01]   [20] @ [40] . [04] . [10] . [02] . [08] . [01] . [02] . [01] . [02] . [04] . [01] . [02] . [04] . [08] . [10]   [20] . [04] . [08] . [08]   [20] . [10] @ [40]   [20] . [10] @ [40] . [80] . [08] . [80] . [01] . [02] . [04] . [04] . [08] . [01] . [02] . [80] @ [40] . [00] . [00] . [00] . [00] . [ea] . [01] . [c7] . [00] . [0d] . [01] ; [3b] . [02] > [3e] . [01] . [1c] . [01] 0 [30] . [01] . [82] . [01] w [77] . [01] . [a1] . [03] . [ba] . [02] ^ [5e] . [01] . [8a] . [02] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [ff] . [d1] a [61] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: ) [29] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [81] 
+avrdude: Recv: . [18] 
+
+avrdude: jtagmkII_recv(): Got message seqno 41 (command_sequence == 41)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse0, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] * [2a] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [80] . [12] . [00] . [00] . [00] , [2c] > [3e] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: * [2a] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: Q [51] 
+avrdude: Recv: . [92] 
+
+avrdude: jtagmkII_recv(): Got message seqno 42 (command_sequence == 42)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse1, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] + [2b] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [81] . [12] . [00] . [00] T [54] . [2e] . [d9] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: + [2b] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [ee] 
+avrdude: Recv: . [13] 
+
+avrdude: jtagmkII_recv(): Got message seqno 43 (command_sequence == 43)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse2, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] , [2c] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [82] . [12] . [00] . [00] . [01] ] [5d] ; [3b] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: , [2c] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [e0] 
+avrdude: Recv: . [8f] 
+
+avrdude: jtagmkII_recv(): Got message seqno 44 (command_sequence == 44)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse4, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] - [2d] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [84] . [12] . [00] . [00] . [00] . [ab] . [e9] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: - [2d] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: _ [5f] 
+avrdude: Recv: . [0e] 
+
+avrdude: jtagmkII_recv(): Got message seqno 45 (command_sequence == 45)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse5, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] . [2e] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [85] . [12] . [00] . [00] . [c9] . [1a] . [b8] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: . [2e] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [8f] 
+avrdude: Recv: . [84] 
+
+avrdude: jtagmkII_recv(): Got message seqno 46 (command_sequence == 46)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse6, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] / [2f] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [86] . [12] . [00] . [00] . [06] . [ca] c [63] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: / [2f] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: 0 [30] 
+avrdude: Recv: . [05] 
+
+avrdude: jtagmkII_recv(): Got message seqno 47 (command_sequence == 47)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse7, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] 0 [30] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [87] . [12] . [00] . [00] . [00] . [ef] . [fe] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 0 [30] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [fa] 
+avrdude: Recv: . [ef] 
+
+avrdude: jtagmkII_recv(): Got message seqno 48 (command_sequence == 48)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., fuse8, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] 1 [31] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b2] . [01] . [00] . [00] . [00] . [88] . [12] . [00] . [00] . [00] . [f4] l [6c] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 1 [31] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: E [45] 
+avrdude: Recv: n [6e] 
+
+avrdude: jtagmkII_recv(): Got message seqno 49 (command_sequence == 49)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_write_byte(.., lock, 0x0, ...)
+avrdude: jtagmkII_write_byte(): Sending write memory command: 
+avrdude: jtagmkII_send(): sending 11 bytes
+avrdude: Send: . [1b] 2 [32] . [00] . [0b] . [00] . [00] . [00] . [0e] . [04] . [b3] . [01] . [00] . [00] . [00] . [8a] . [12] . [00] . [00] . [c5] . [c2] . [c6] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 2 [32] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [95] 
+avrdude: Recv: . [e4] 
+
+avrdude: jtagmkII_recv(): Got message seqno 50 (command_sequence == 50)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_program_disable(): Sending leave progmode command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] 3 [33] . [00] . [01] . [00] . [00] . [00] . [0e] . [15] . [0e] . [a6] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 3 [33] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: * [2a] 
+avrdude: Recv: e [65] 
+
+avrdude: jtagmkII_recv(): Got message seqno 51 (command_sequence == 51)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_reset(): Sending reset command: 
+avrdude: jtagmkII_send(): sending 2 bytes
+avrdude: Send: . [1b] 4 [34] . [00] . [02] . [00] . [00] . [00] . [0e] . [0b] . [01] \ [5c] . [b6] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 4 [34] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [02] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [a5] . [83] 
+avrdude: Recv: . [a9] 
+avrdude: Recv: $ [24] 
+
+avrdude: jtagmkII_recv(): Got message seqno 52 (command_sequence == 52)
+avrdude: Recv: . [a5] . [83] 
+
+Raw message:
+0xa5 0x83 
+Illegal MCU state
+
+avrdude: jtagmkII_reset(): bad response to reset command: RSP_ILLEGAL_MCU_STATE
+avrdude: jtagmkII_close()
+avrdude: jtagmkII_close(): Sending GO command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] 5 [35] . [00] . [01] . [00] . [00] . [00] . [0e] . [08] . [db] p [70] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 5 [35] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [01] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [80] 
+avrdude: Recv: . [9b] 
+avrdude: Recv: x [78] 
+
+avrdude: jtagmkII_recv(): Got message seqno 53 (command_sequence == 53)
+avrdude: Recv: . [80] 
+
+Raw message:
+0x80 
+OK
+
+avrdude: jtagmkII_close(): Sending sign-off command: 
+avrdude: jtagmkII_send(): sending 1 bytes
+avrdude: Send: . [1b] 6 [36] . [00] . [01] . [00] . [00] . [00] . [0e] . [00] C [43] v [76] 
+avrdude: jtagmkII_recv():
+avrdude: Recv: . [1b] 
+avrdude: Recv: 6 [36] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [02] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [00] 
+avrdude: Recv: . [0e] 
+avrdude: Recv: . [a5] . [83] 
+avrdude: Recv: S [53] 
+avrdude: Recv: . [bf] 
+
+avrdude: jtagmkII_recv(): Got message seqno 54 (command_sequence == 54)
+avrdude: Recv: . [a5] . [83] 
+
+Raw message:
+0xa5 0x83 
+Illegal MCU state
+
+avrdude: jtagmkII_close(): bad response to sign-off command: RSP_ILLEGAL_MCU_STATE
+

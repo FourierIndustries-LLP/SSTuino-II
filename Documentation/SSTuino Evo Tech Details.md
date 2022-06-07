@@ -445,7 +445,7 @@ This device will need to test its connection of device with various host compute
 * Intel Mac with USB-C (TB3/4) [WORKING]
 * Apple Silicon Mac with USB-C (TB4) [WORKING]
 * Windows PC with USB-A (USB 3/2) [WORKING]
-* Windows PC with USB-C (USB 3/TB3/TB4)
+* Windows PC with USB-C (USB 3/TB3/TB4) [WORKING]
 
 Our USB PID/VID combo is 0x557D/0x1206. For reference to our application on `pidcodes`, please click [this link](https://github.com/pidcodes/pidcodes.github.com/pull/704)
 

@@ -4,9 +4,13 @@ Designed by FourierIndustries LLP | Designed, assembled and tested in Singapore
 
 SSTuino II is an easy to use and industrial-ready Wi-Fi enabled microcontroller, designed and fabricated by SST Alumni. With a smaller form factor, improved Wi-Fi and processing capabilities, this is the next generation of SSTuino.
 
-**SSTuino II Official Website: \<currently WIP\>**
+**SSTuino II documentation available at: https://knowledge.fourier.industries**
 
 ## Technical information
+
+### Pinout diagram
+
+![Pinout](Documentation/SSTuino%20II%20Rev%20A%20Pinout%20Final.png)
 
 ### Repository Layout
 
