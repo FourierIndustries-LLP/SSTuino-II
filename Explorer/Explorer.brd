@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="12.5" altunitdist="mil" altunit="mil"/>
@@ -246,7 +246,7 @@
 <text x="54.61" y="53.34" size="1.016" layer="22" font="vector" ratio="14" rot="MR0">Made on Earth by Humans</text>
 <text x="17.145" y="27.94" size="1.016" layer="21" font="vector" ratio="16" align="bottom-center">USB Port 
 Towards Left</text>
-<text x="52.705" y="25.4" size="1.6764" layer="21" font="vector" ratio="16" rot="R90" align="bottom-center">Rev. A</text>
+<text x="52.705" y="25.4" size="1.6764" layer="21" font="vector" ratio="16" rot="R90" align="bottom-center">Rev. A.1</text>
 <wire x1="23.8125" y1="27.305" x2="10.4775" y2="27.305" width="0.1524" layer="21"/>
 <wire x1="10.4775" y1="27.305" x2="10.16" y2="26.9875" width="0.1524" layer="21" curve="90"/>
 <wire x1="10.16" y1="26.9875" x2="10.16" y2="24.4475" width="0.1524" layer="21"/>
@@ -385,8 +385,8 @@ Towards Left</text>
 <wire x1="15.08125" y1="24.28875" x2="14.9225" y2="24.13" width="0.1016" layer="21"/>
 <wire x1="15.24" y1="24.13" x2="15.08125" y2="23.97125" width="0.1016" layer="21"/>
 <wire x1="15.39875" y1="23.97125" x2="15.24" y2="23.8125" width="0.1016" layer="21"/>
-<text x="59.3725" y="39.6875" size="1.27" layer="21" font="vector" ratio="16" align="bottom-center">WIFI</text>
-<text x="59.3725" y="31.4325" size="1.27" layer="21" font="vector" ratio="16" rot="R180" align="bottom-center">BLE+</text>
+<text x="59.3725" y="39.6875" size="1.27" layer="21" font="vector" ratio="16" align="bottom-center">NORM</text>
+<text x="59.3725" y="31.4325" size="1.27" layer="21" font="vector" ratio="16" rot="R180" align="bottom-center">HYBR</text>
 <circle x="55.88" y="45.4025" radius="0.127" width="0.254" layer="21"/>
 <circle x="50.8" y="45.4025" radius="0.127" width="0.254" layer="21"/>
 <circle x="48.26" y="45.4025" radius="0.127" width="0.254" layer="21"/>
@@ -10992,12 +10992,6 @@ Datasheet</description>
 <attribute name="PROD_ID" value="DIO-09176" x="17.78" y="15.24" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="17.145" y="15.494" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
-<element name="WIFI-RESET" library="D3ltav's Custom" package="SW2-2.6-3.9X2.9X1.5+0.4MM" package3d_urn="urn:adsk.eagle:package:8005100/1" value="SKRKAEE020" x="36.83" y="10.795" smashed="yes">
-<attribute name="LCSC_PART" value="C455280" x="36.83" y="10.795" size="1.9304" layer="27" font="vector" ratio="14" display="off"/>
-<attribute name="MPN" value="SKRKAEE020" x="36.83" y="10.795" size="1.9304" layer="27" font="vector" ratio="14" display="off"/>
-<attribute name="NAME" x="40.3225" y="10.795" size="1.27" layer="25" font="vector" ratio="16" align="center-left"/>
-<attribute name="VALUE" x="35.33" y="8.505" size="0.635" layer="27" font="vector" ratio="11"/>
-</element>
 <element name="WIFI-BOOT" library="D3ltav's Custom" package="SW2-2.6-3.9X2.9X1.5+0.4MM" package3d_urn="urn:adsk.eagle:package:8005100/1" value="SKRKAEE020" x="36.83" y="14.2875" smashed="yes">
 <attribute name="LCSC_PART" value="C455280" x="36.83" y="14.2875" size="1.9304" layer="27" font="vector" ratio="14" display="off"/>
 <attribute name="MPN" value="SKRKAEE020" x="36.83" y="14.2875" size="1.9304" layer="27" font="vector" ratio="14" display="off"/>
@@ -11290,16 +11284,6 @@ Datasheet</description>
 <attribute name="PROD_ID" value="RES-00824" x="53.34" y="14.2875" size="1.6764" layer="27" ratio="16" rot="R270" display="off"/>
 <attribute name="VALUE" x="52.578" y="14.2875" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
-<element name="R31" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" package="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k" x="41.91" y="8.89" smashed="yes" rot="R180">
-<attribute name="LCSC_PART" value="C25804" x="41.91" y="8.89" size="0.8128" layer="27" ratio="16" rot="R180" display="off"/>
-<attribute name="PROD_ID" value="RES-00824" x="41.91" y="8.89" size="0.8128" layer="27" ratio="16" rot="R180" display="off"/>
-<attribute name="VALUE" x="41.91" y="9.652" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
-</element>
-<element name="R2" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" package="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k" x="41.91" y="15.875" smashed="yes" rot="R180">
-<attribute name="LCSC_PART" value="C25804" x="41.91" y="15.875" size="0.8128" layer="27" ratio="16" rot="R180" display="off"/>
-<attribute name="PROD_ID" value="RES-00824" x="41.91" y="15.875" size="0.8128" layer="27" ratio="16" rot="R180" display="off"/>
-<attribute name="VALUE" x="41.91" y="16.637" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
-</element>
 <element name="U$8" library="D3ltav's Custom" package="SST-BIG" value="" x="59.69" y="5.08" smashed="yes" rot="MR0"/>
 <element name="U$10" library="D3ltav's Custom" package="STARFIELD_URSAMINOR" value="" x="64.4525" y="49.2125" smashed="yes" rot="MR270"/>
 <element name="U$11" library="D3ltav's Custom" package="STARFIELD_SMALL" value="" x="33.02" y="49.53" smashed="yes" rot="MR180"/>
@@ -11424,8 +11408,6 @@ Datasheet</description>
 <via x="16.51" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
 <via x="26.3525" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
 <via x="29.21" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
-<contactref element="R31" pad="1"/>
-<contactref element="R2" pad="1"/>
 <via x="62.865" y="11.43" extent="1-16" drill="0.35" diameter="0.65"/>
 <via x="49.2125" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
 <via x="41.5925" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
@@ -11435,6 +11417,7 @@ Datasheet</description>
 <via x="55.88" y="20.32" extent="1-16" drill="0.35" diameter="0.65"/>
 <via x="33.9725" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
 <via x="13.97" y="34.925" extent="1-16" drill="0.35" diameter="0.65"/>
+<contactref element="WIFI-BOOT" pad="2"/>
 </signal>
 <signal name="VCC">
 <contactref element="B1" pad="IOREF"/>
@@ -11847,13 +11830,6 @@ Datasheet</description>
 <contactref element="WIFI-BOOT" pad="1"/>
 <wire x1="34.43" y1="14.2875" x2="35.56" y2="15.4175" width="0.3048" layer="1"/>
 <wire x1="35.56" y1="15.4175" x2="35.56" y2="19.05" width="0.3048" layer="1"/>
-</signal>
-<signal name="ESPEN">
-<contactref element="J3" pad="13"/>
-<contactref element="WIFI-RESET" pad="1"/>
-<wire x1="33.02" y1="19.05" x2="33.3331" y2="18.7369" width="0.3048" layer="1"/>
-<wire x1="34.43" y1="10.795" x2="33.3331" y2="11.8919" width="0.3048" layer="1"/>
-<wire x1="33.3331" y1="18.7369" x2="33.3331" y2="11.8919" width="0.3048" layer="1"/>
 </signal>
 <signal name="ESPSCL">
 <contactref element="J3" pad="12"/>
@@ -12442,18 +12418,6 @@ Datasheet</description>
 <wire x1="6.985" y1="29.5275" x2="6.985" y2="34.29" width="0.3048" layer="1"/>
 <wire x1="3.81" y1="44.9025" x2="4.6275" y2="45.72" width="0.3048" layer="1"/>
 <wire x1="3.81" y1="37.465" x2="3.81" y2="44.9025" width="0.3048" layer="1"/>
-</signal>
-<signal name="N$4">
-<contactref element="WIFI-RESET" pad="2"/>
-<contactref element="R31" pad="2"/>
-<wire x1="41.06" y1="8.89" x2="41.06" y2="8.965" width="0.3048" layer="1"/>
-<wire x1="41.06" y1="8.965" x2="39.23" y2="10.795" width="0.3048" layer="1"/>
-</signal>
-<signal name="N$9">
-<contactref element="WIFI-BOOT" pad="2"/>
-<contactref element="R2" pad="2"/>
-<wire x1="41.06" y1="15.875" x2="40.8175" y2="15.875" width="0.3048" layer="1"/>
-<wire x1="40.8175" y1="15.875" x2="39.23" y2="14.2875" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

@@ -7164,9 +7164,6 @@ Dimensional Drawing</description>
 <attribute name="LCSC_PART" value="C2296"/>
 </part>
 <part name="D1" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE" device="-KIT2" package3d_urn="urn:adsk.eagle:package:38455/1" value="1N4001"/>
-<part name="WIFI-RESET" library="D3ltav's Custom" deviceset="SMD-BUTTON(2P-3.9X2.9X1.5+0.4MM)" device="-SKRKAEE020" package3d_urn="urn:adsk.eagle:package:8005100/1" value="SKRKAEE020">
-<attribute name="LCSC_PART" value="C455280"/>
-</part>
 <part name="WIFI-BOOT" library="D3ltav's Custom" deviceset="SMD-BUTTON(2P-3.9X2.9X1.5+0.4MM)" device="-SKRKAEE020" package3d_urn="urn:adsk.eagle:package:8005100/1" value="SKRKAEE020">
 <attribute name="LCSC_PART" value="C455280"/>
 </part>
@@ -7351,12 +7348,6 @@ Dimensional Drawing</description>
 <part name="GND10" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="SUPPLY11" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
 <part name="SUPPLY12" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VIN" device=""/>
-<part name="R31" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="10KOHM" device="-0603-1/10W-1%" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k">
-<attribute name="LCSC_PART" value="C25804"/>
-</part>
-<part name="R2" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="10KOHM" device="-0603-1/10W-1%" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k">
-<attribute name="LCSC_PART" value="C25804"/>
-</part>
 <part name="GND11" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-DPDT" device="-SMD-AYZ0202" package3d_urn="urn:adsk.eagle:package:40160/1">
 <attribute name="LCSC_PART" value="C318999"/>
@@ -7462,11 +7453,8 @@ Dimensional Drawing</description>
 <attribute name="NAME" x="38.1" y="40.132" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="38.1" y="36.068" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
-<instance part="WIFI-RESET" gate="G$1" x="86.36" y="152.4" smashed="yes">
-<attribute name="NAME" x="81.534" y="154.94" size="1.27" layer="95" ratio="10"/>
-</instance>
-<instance part="WIFI-BOOT" gate="G$1" x="86.36" y="157.48" smashed="yes">
-<attribute name="NAME" x="81.788" y="160.02" size="1.27" layer="95" ratio="10"/>
+<instance part="WIFI-BOOT" gate="G$1" x="86.36" y="154.94" smashed="yes">
+<attribute name="NAME" x="81.788" y="157.48" size="1.27" layer="95" ratio="10"/>
 </instance>
 <instance part="R1" gate="G$1" x="86.36" y="22.86" smashed="yes" rot="R90">
 <attribute name="NAME" x="84.836" y="22.86" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
@@ -7785,16 +7773,6 @@ Dimensional Drawing</description>
 <instance part="SUPPLY12" gate="G$1" x="116.84" y="50.8" smashed="yes">
 <attribute name="VALUE" x="116.84" y="53.594" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="R31" gate="G$1" x="96.52" y="147.32" smashed="yes" rot="R90">
-<attribute name="NAME" x="94.996" y="147.32" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="98.044" y="147.32" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
-<attribute name="LCSC_PART" x="96.52" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
-</instance>
-<instance part="R2" gate="G$1" x="104.14" y="147.32" smashed="yes" rot="R90">
-<attribute name="NAME" x="102.616" y="147.32" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="105.664" y="147.32" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
-<attribute name="LCSC_PART" x="104.14" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
-</instance>
 <instance part="GND11" gate="1" x="96.52" y="134.62" smashed="yes">
 <attribute name="VALUE" x="96.52" y="134.366" size="1.778" layer="96" align="top-center"/>
 </instance>
@@ -7965,13 +7943,9 @@ Dimensional Drawing</description>
 </segment>
 <segment>
 <pinref part="GND11" gate="1" pin="GND"/>
-<pinref part="R31" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="137.16" x2="96.52" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="139.7" x2="96.52" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="142.24" x2="104.14" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="139.7" x2="96.52" y2="139.7" width="0.1524" layer="91"/>
-<junction x="96.52" y="139.7"/>
+<wire x1="96.52" y1="137.16" x2="96.52" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="WIFI-BOOT" gate="G$1" pin="2"/>
+<wire x1="96.52" y1="154.94" x2="93.98" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -8464,16 +8438,7 @@ Dimensional Drawing</description>
 <pinref part="J3" gate="G$1" pin="14"/>
 <label x="53.34" y="154.94" size="1.778" layer="95"/>
 <pinref part="WIFI-BOOT" gate="G$1" pin="1"/>
-<wire x1="78.74" y1="157.48" x2="78.74" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="154.94" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="ESPEN" class="0">
-<segment>
-<pinref part="J3" gate="G$1" pin="13"/>
-<label x="53.34" y="152.4" size="1.778" layer="95"/>
-<pinref part="WIFI-RESET" gate="G$1" pin="1"/>
-<wire x1="78.74" y1="152.4" x2="53.34" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ESPSCL" class="0">
@@ -8961,21 +8926,6 @@ Dimensional Drawing</description>
 <pinref part="B1" gate="G$1" pin="SCK"/>
 <wire x1="129.54" y1="20.32" x2="121.92" y2="20.32" width="0.1524" layer="91"/>
 <label x="121.92" y="20.32" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="WIFI-RESET" gate="G$1" pin="2"/>
-<pinref part="R31" gate="G$1" pin="2"/>
-<wire x1="93.98" y1="152.4" x2="96.52" y2="152.4" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="WIFI-BOOT" gate="G$1" pin="2"/>
-<wire x1="93.98" y1="157.48" x2="104.14" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="104.14" y1="157.48" x2="104.14" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
