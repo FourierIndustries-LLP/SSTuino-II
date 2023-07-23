@@ -212,7 +212,7 @@
 <wire x1="32.7025" y1="2.143125" x2="32.22625" y2="2.619375" width="0.4064" layer="22"/>
 <wire x1="32.22625" y1="2.619375" x2="32.22625" y2="7.62" width="0.4064" layer="22"/>
 <text x="66.04" y="13.0175" size="1.1176" layer="22" font="vector" ratio="14" rot="MR270" align="bottom-center">Made with &lt;3 by SST Alumni
-Assembled in Singapore</text>
+Assembled in China</text>
 <text x="39.6875" y="8.334375" size="1.4224" layer="22" font="vector" ratio="14" rot="MR0">ATmega4809
 16MHz•5V
 ESP32
