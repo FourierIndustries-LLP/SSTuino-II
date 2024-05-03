@@ -16,19 +16,25 @@ echo
 # Find where is Arduino.app
 ARDUINO_APP="$(osascript -l JavaScript -e 'a=Application.currentApplication();a.includeStandardAdditions=true;a.chooseFile({withPrompt:"Select your Arduino IDE.app"}).toString()')"
 ARDUINO_INSTALLATION="${ARDUINO_APP}/Contents/Resources/app/lib/backend/resources/"
-ARDUINO_PLIST="${ARDUINO_APP}/Contents/Info.plist"
+
+# Check if Arduino is in a dmg
+if [[ "$ARDUINO_APP" == "/Volumes/"* ]]; then
+    echo "⚠️ Please move your Arduino.app to your Applications or Desktop folder first. Arduino should not be run directly from the disk image"
+    exit 0
+fi
 export PATH="$PATH:$ARDUINO_INSTALLATION"
+ARDUINO_PLIST="${ARDUINO_APP}/Contents/Info.plist"
 
 # Check Arduino version to ensure it is not nightly
 ARDUINO_VERSION=`defaults read "$ARDUINO_PLIST" CFBundleShortVersionString`
 SUB="nightly"
 if [[ "$ARDUINO_VERSION" == *"$SUB"* ]]; then
-  echo "Your version of Arduino is a nightly (beta) build!"
-  echo "Please remove it. We are downloading the latest stable version..."
-  cd ~/Downloads
-  curl -O https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.2_macOS_arm64.dmg
-  echo "Download complete! Please go to your downloads folder and install Arduino again"
-  exit 0
+    echo "⚠️ Your version of Arduino is a nightly (beta) build!"
+    echo "Please remove it. We are downloading the latest stable version..."
+    cd ~/Downloads
+    curl -O https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.2_macOS_arm64.dmg
+    echo "Download complete! Please go to your downloads folder and install Arduino again"
+    exit 0
 fi
 echo "Arduino version confirmed as $ARDUINO_VERSION"
 
@@ -46,6 +52,7 @@ echo
 echo "Reinstalling cores..."
 arduino-cli core update-index --additional-urls https://fourierindustries-llp.github.io/SSTuino_II_Core/package_FourierIndustries-LLP_SSTuino_II_Core_index.json
 arduino-cli core install "arduino:avr"
+arduino-cli core install "arduino:megaavr"
 arduino-cli core install "SSTuino II Series Boards:megaavr" --additional-urls https://fourierindustries-llp.github.io/SSTuino_II_Core/package_FourierIndustries-LLP_SSTuino_II_Core_index.json
 arduino-cli core upgrade
 

@@ -27,7 +27,7 @@ Paste and run the following command in your terminal to run the autorepair tool,
 Note: This tool is only compatible with Arduino IDE 2. 
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/FourierIndustries-LLP/SSTuino_II/HEAD/sstuino-autorepair.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/FourierIndustries-LLP/SSTuino-II/HEAD/Tooling/sstuino-autorepair.sh)"
 ```
 
 ## Contributing
