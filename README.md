@@ -1,4 +1,4 @@
-Designed by FourierIndustries LLP | Designed, assembled and tested in Singapore
+Designed by FourierIndustries LLP | Designed and tested in Singapore
 
 # SSTuino II
 
@@ -18,6 +18,17 @@ SSTuino II is an easy to use and industrial-ready Wi-Fi enabled microcontroller,
 * **SSTuinoII_Jig**: CAD files for the SSTuino II test jig
 * **Manufacturing**: Manufacturing files (Gerbers, BOM, component placement)
 * **Documentation**: Documentation for design and manufacturing (not user manuals)
+* **Tooling**: Software tools for production and debugging of the SSTuino II
+
+### Automatic repair tool
+
+Paste and run the following command in your terminal to run the autorepair tool, should you run into difficulty launching Arduino IDE or uploading programs onto your SSTuino II. Follow the on-screen instructions carefully. 
+
+Note: This tool is only compatible with Arduino IDE 2. 
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/FourierIndustries-LLP/SSTuino_II/HEAD/sstuino-autorepair.sh)"
+```
 
 ## Contributing
 
